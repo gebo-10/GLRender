@@ -1,0 +1,17 @@
+#version 330 
+uniform float a; 
+layout(location = 0) in vec3 VertexPosition;
+
+layout(location = 1) in vec2 vertTexCoord;
+
+flat out  float b; 
+
+out vec2 fragTexCoord;
+vec4 p2; 
+void main(){
+	b=a;
+	fragTexCoord=vertTexCoord;
+	p2 = vec4(VertexPosition,1.0);
+	gl_Position =gl_ModelViewProjectionMatrix * p2;
+	
+}

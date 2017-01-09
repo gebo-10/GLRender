@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{240fa925-3c7a-4a7d-bf27-e535d6dbc428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Include">
+      <UniqueIdentifier>{f538a504-48b3-491e-bf19-70cfd2fde643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Src">
+      <UniqueIdentifier>{195ac4b9-0c48-4a17-a6e7-1b1b9a17e25b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{1ed4090c-1ea1-4123-a8e3-9b13bd65ced4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\core\include\Renderable.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\include\Base.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\include\SceneManager.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\include\SceneObject.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\include\Common.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\include\MemeryManager.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\include\VAO.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\include\VBO.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\include\Model.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\include\Camera.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\include\ShaderProgram.hpp">
+      <Filter>Core\Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\main.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\src\Camera.cpp">
+      <Filter>Core\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\src\ShaderProgram.cpp">
+      <Filter>Core\Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
