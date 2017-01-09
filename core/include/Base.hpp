@@ -7,9 +7,10 @@
 // #else							// Use dll
 // 	#define GLRENDER_CORE_API GLRENDER_SYMBOL_IMPORT
 // #endif
-
+#include<stdio.h>
 #include <iostream>
 #include <fstream>
 #include <string>
 using   namespace   std;
+
 #endif
