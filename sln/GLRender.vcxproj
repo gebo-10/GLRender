@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -18,13 +18,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -45,9 +45,7 @@
     <IncludePath>E:\GLRender\3rd\Assimp\include;E:\GLRender\3rd\SDL\include;E:\GLRender\3rd\glew\include;E:\GLRender\3rd\Eigen;E:\GLRender\core\include;$(IncludePath)</IncludePath>
     <ReferencePath>E:\GLRender\3rd\glew\lib;E:\GLRender\3rd\Assimp\lib;E:\GLRender\3rd\SDL\lib;$(ReferencePath)</ReferencePath>
     <LibraryPath>E:\GLRender\3rd\glew\lib;E:\GLRender\3rd\SDL\lib;E:\GLRender\3rd\Assimp\lib;$(LibraryPath)</LibraryPath>
-    <LibraryWPath>E:\GLRender\bin;E:\GLRender\3rd\Assimp\lib;$(LibraryWPath)</LibraryWPath>
-    <OutDir>..\bin</OutDir>
-    <ExecutablePath>E:\GLRender\bin;$(ExecutablePath)</ExecutablePath>
+    <LibraryWPath>E:\GLRender\3rd\Assimp\lib;$(LibraryWPath)</LibraryWPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -58,6 +56,8 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/legacy_stdio_definitions.lib %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,8 +79,11 @@
     <ClInclude Include="..\core\include\Camera.hpp" />
     <ClInclude Include="..\core\include\Common.hpp" />
     <ClInclude Include="..\core\include\MemeryManager.hpp" />
+    <ClInclude Include="..\core\include\Mesh.hpp" />
     <ClInclude Include="..\core\include\Model.hpp" />
+    <ClInclude Include="..\core\include\RanderUnit.hpp" />
     <ClInclude Include="..\core\include\Renderable.hpp" />
+    <ClInclude Include="..\core\include\RenderFactory.hpp" />
     <ClInclude Include="..\core\include\SceneManager.hpp" />
     <ClInclude Include="..\core\include\SceneObject.hpp" />
     <ClInclude Include="..\core\include\ShaderProgram.hpp" />
