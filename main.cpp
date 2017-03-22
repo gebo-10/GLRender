@@ -24,8 +24,10 @@
 #include<VAO.hpp>
 #include <VBO.hpp>
 #include <ShaderProgram.hpp>
-extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
-#pragma comment(lib, "legacy_stdio_definitions.lib") 
+//extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
+//#pragma comment(lib, "legacy_stdio_definitions.lib") 
+
+#include<vector>
 
 void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y){
 	//Setup the destination rectangle to be at the position we want
@@ -150,7 +152,8 @@ int main(int argc, char* args[])
 	VAO g_vao;
 	g_vao.init();
 	const aiMesh* paiMesh = model.scene->mMeshes[0];
-	
+	cout << "¶¥µãÊý "<<paiMesh->mNumVertices <<endl;
+
 	int index = g_vao.newVBO(paiMesh->mNumVertices * 3*sizeof(float), (void *)paiMesh->mVertices);
 	//int index = g_vao.newVBO(sizeof(vertex_list)*sizeof(float),(void *) vertex_list);
 
@@ -172,11 +175,28 @@ int main(int argc, char* args[])
 		1.0, 1.0,
 		0.0, 1.0
 	};
-	index = g_vao.newVBO(sizeof(uv), (void *)uv);
-	glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+	//index = g_vao.newVBO(sizeof(uv), (void *)uv);
+	//glEnableVertexAttribArray(1);
+	//glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
-	g_vao.initEBO(paiMesh->mNumFaces * sizeof(int), (void *)paiMesh->mFaces);
+	index = g_vao.newVBO(paiMesh->mNumVertices * sizeof(float), (void *)paiMesh->mTextureCoords[0]);
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, 0);
+
+	//http://ogldev.atspace.co.uk/www/tutorial22/tutorial22.html
+	//http://wiki.jikexueyuan.com/project/modern-opengl-tutorial/tutorial22.html
+	//http://assimp.sourceforge.net/lib_html/structai_mesh.html
+
+	vector<int> Indices;
+	for (unsigned int i = 0; i < paiMesh->mNumFaces; i++) {
+		const aiFace& Face = paiMesh->mFaces[i];
+		assert(Face.mNumIndices == 3);
+		Indices.push_back(Face.mIndices[0]);
+		Indices.push_back(Face.mIndices[1]);
+		Indices.push_back(Face.mIndices[2]);
+	}
+
+	g_vao.initEBO(Indices.size() * sizeof(int), (void *)&Indices[0]);
 
 	float arg = 1.0;
 	int loc = glGetUniformLocation(programShader, "a");
@@ -338,7 +358,7 @@ int main(int argc, char* args[])
 
 
 		//glDrawElements(GL_LINE_STRIP, 3, GL_UNSIGNED_INT, 0);
-		glDrawElements(GL_TRIANGLES,paiMesh->mNumFaces *3, GL_UNSIGNED_INT, 0);//GL_LINES GL_LINE_LOOP
+		glDrawElements(GL_TRIANGLES, Indices.size() , GL_UNSIGNED_INT, 0);//GL_LINES GL_LINE_LOOP
 
 
 		SDL_GL_SwapWindow(pWindow);
