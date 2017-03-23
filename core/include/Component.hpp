@@ -7,7 +7,7 @@ public:
 	virtual ~Component();
 public:
 	virtual void Update();
-	virtual void OnMsg(int type);
+	virtual void OnMsg(int type);//注释
 
 };
 
