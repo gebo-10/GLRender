@@ -144,7 +144,7 @@ int main(int argc, char* args[])
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	Model model;
-	model.Import("spider.fbx");
+	model.Import("box.fbx");
 
 	//float tmp[100] = { 0 };
 	//memcpy((void *)tmp, loder.mesh.buff.data, loder.mesh.buff.data_size);
