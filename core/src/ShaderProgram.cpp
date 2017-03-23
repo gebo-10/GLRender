@@ -155,7 +155,8 @@ GLuint ShaderProgram::buildShader(GLchar *vShaderFile, GLchar *fShaderFile)
 	}
 	else//链接成功，在OpenGL管线中使用渲染程序
 	{
-		cerr << "success" << endl;
+		cerr << "build shader success" << endl;
+		id = programHandle;
 		return programHandle;
 		//	glUseProgram(programHandle);
 	}

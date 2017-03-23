@@ -11,8 +11,9 @@ public:
 	~ShaderProgram();
 	char * readTextFile(char * file_name);
 	GLuint buildShader(GLchar *vShaderFile, GLchar *fShaderFile);
+	GLuint id;
 private:
-	GLuint shader;
+	
 };
 
 

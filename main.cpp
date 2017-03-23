@@ -24,6 +24,7 @@
 #include<VAO.hpp>
 #include <VBO.hpp>
 #include <ShaderProgram.hpp>
+#include<Material.hpp>
 //extern "C" { FILE __iob_func[3] = { *stdin,*stdout,*stderr }; }
 //#pragma comment(lib, "legacy_stdio_definitions.lib") 
 
@@ -39,34 +40,6 @@ void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y){
 	SDL_RenderCopy(ren, tex, NULL, &dst);
 }
 
-static const float vertex_list[] =
-{
-	-0.5f, -0.5f, -0.5f,
-	0.5f, -0.5f, -0.5f,
-	-0.5f, 0.5f, -0.5f,
-	0.5f, 0.5f, -0.5f,
-	-0.5f, -0.5f, 0.5f,
-	0.5f, -0.5f, 0.5f,
-	-0.5f, 0.5f, 0.5f,
-	0.5f, 0.5f, 0.5f,
-};
-
-
-static const GLint index_list[] =
-{
-	0, 1,
-	2, 3,
-	4, 5,
-	6, 7,
-	0, 2,
-	1, 3,
-	4, 6,
-	5, 7,
-	0, 4,
-	1, 5,
-	7, 3,
-	2, 6
-};
 Camera *camera;
 void initCamera(){
 	Vector3d pos(0.0, 0.0, 12.0);
@@ -146,8 +119,11 @@ int main(int argc, char* args[])
 	Model model;
 	model.Import("box.fbx");
 
-	//float tmp[100] = { 0 };
-	//memcpy((void *)tmp, loder.mesh.buff.data, loder.mesh.buff.data_size);
+
+	Metarial metarial;
+	metarial.initShader("vert.txt", "frag.txt");
+	metarial.regTexture("f.jpg");
+	metarial.bind();
 
 	VAO g_vao;
 	g_vao.init();
@@ -159,25 +135,7 @@ int main(int argc, char* args[])
 
 	glEnableVertexAttribArray(0);//????vbo
 	glVertexAttribPointer((GLuint)0, 3, GL_FLOAT, true, 0, 0);
-	//
-	//	int ele_index[] = { 0, 1, 2, 4,5,6  ,7};
-	ShaderProgram SP;
-	int programShader = SP.buildShader("vert.txt", "frag.txt");
-	glUseProgram(programShader);
-
-	float uv1[] = {
-		0.0, 0.0,
-		1.0, 0.0,
-		1.0, 1.0,
-		0.0, 1.0,
-		0.0, 0.0,
-		1.0, 0.0,
-		1.0, 1.0,
-		0.0, 1.0
-	};
-	//index = g_vao.newVBO(sizeof(uv), (void *)uv);
-	//glEnableVertexAttribArray(1);
-	//glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+	
 	cout << "ÊÇ·ñÎÆÀí×ø±ê£º" << paiMesh->HasTextureCoords(0) << endl;
 	vector<float> uv;
 	for (unsigned int i = 0; i < paiMesh->mNumVertices; i++) {
@@ -206,41 +164,8 @@ int main(int argc, char* args[])
 	g_vao.initEBO(Indices.size() * sizeof(int), (void *)&Indices[0]);
 
 	float arg = 1.0;
-	int loc = glGetUniformLocation(programShader, "a");
+	int loc = glGetUniformLocation(metarial.shader.id, "a");
 	glUniform1f(loc, arg);
-
-	SDL_Surface * img = IMG_Load("f.jpg");
-
-	SDL_Surface* Picturenew = SDL_ConvertSurfaceFormat(img, SDL_PIXELFORMAT_ABGR8888, 0);
-
-
-
-	GLuint texture_id = 0;
-	glGenTextures(1, &texture_id);
-	glBindTexture(GL_TEXTURE_2D, texture_id);
-
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, Picturenew->w, Picturenew->h, 0, GL_RGBA, GL_UNSIGNED_BYTE, Picturenew->pixels);
-
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	//   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrapMode);
-	//   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrapMode);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
-
-
-	//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
-
-	glEnable(GL_TEXTURE_2D);
-
-
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture_id);
-	glUniform1f(glGetUniformLocation(programShader, "tex"), 0);
-
-
 
 
 
