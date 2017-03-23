@@ -144,7 +144,7 @@ int main(int argc, char* args[])
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	Model model;
-	model.Import("box.fbx");
+	model.Import("spider.fbx");
 
 	//float tmp[100] = { 0 };
 	//memcpy((void *)tmp, loder.mesh.buff.data, loder.mesh.buff.data_size);
@@ -165,7 +165,7 @@ int main(int argc, char* args[])
 	int programShader = SP.buildShader("vert.txt", "frag.txt");
 	glUseProgram(programShader);
 
-	float uv[] = {
+	float uv1[] = {
 		0.0, 0.0,
 		1.0, 0.0,
 		1.0, 1.0,
@@ -178,10 +178,17 @@ int main(int argc, char* args[])
 	//index = g_vao.newVBO(sizeof(uv), (void *)uv);
 	//glEnableVertexAttribArray(1);
 	//glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
-
-	index = g_vao.newVBO(paiMesh->mNumVertices * sizeof(float), (void *)paiMesh->mTextureCoords[0]);
+	cout << "ÊÇ·ñÎÆÀí×ø±ê£º" << paiMesh->HasTextureCoords(0) << endl;
+	vector<float> uv;
+	for (unsigned int i = 0; i < paiMesh->mNumVertices; i++) {
+		const aiVector3D* pTexCoord =&(paiMesh->mTextureCoords[0][i]);
+		uv.push_back(pTexCoord->x);
+		uv.push_back(pTexCoord->y);
+	}
+	//const aiVector3D* pTexCoord = paiMesh->HasTextureCoords(0) ? &(paiMesh->mTextureCoords[0][i]) : &Zero3D;
+	index = g_vao.newVBO(uv.size() * sizeof(float), (void *)&uv[0]);
 	glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, 0);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
 	//http://ogldev.atspace.co.uk/www/tutorial22/tutorial22.html
 	//http://wiki.jikexueyuan.com/project/modern-opengl-tutorial/tutorial22.html
@@ -331,17 +338,6 @@ int main(int argc, char* args[])
 		}
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
-		glBegin(GL_TRIANGLES);
-		glTexCoord2f(0.0, 0.0);// glColor3f(0.0f, 1.0f, 0.0f);
-		glVertex3f(0.0f, 1.0f, -0.5f);
-
-		glTexCoord2f(1.0, 0.0);// glColor3f(1.0f,0.0f,0.0f);  
-		glVertex3f(-1.0f, -1.0f, 2.0f);
-
-		glTexCoord2f(0.0, 1.0); //glColor3f(0.0f, 0.0f, 1.0f);
-		glVertex3f(1.0f, -1.0f, -0.5f);
-		glEnd();
 
 
 
