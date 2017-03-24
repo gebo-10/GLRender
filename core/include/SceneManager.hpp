@@ -7,7 +7,7 @@
 class SceneManager{
 public:
 	SceneObject *root;
-	std::vector<Camera> cameras;
+	//std::vector<Camera> cameras;用组件方加
 	//std::vector<LightSourcePtr> lights_;
 public:
 	SceneManager();
