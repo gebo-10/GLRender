@@ -12,9 +12,9 @@ public:
 public:
 	Metarial();
 	~Metarial();
-	bool regTexture(char * file);
-	bool initShader(GLchar *vShaderFile, GLchar *fShaderFile);
-	bool bind(void);
+	bool RegTexture(char * file);
+	bool InitShader(GLchar *vShaderFile, GLchar *fShaderFile);
+	bool Bind(void);
 };
 Metarial::Metarial(){
 
@@ -22,16 +22,16 @@ Metarial::Metarial(){
 Metarial::~Metarial(){
 
 }
-bool Metarial::initShader(GLchar *vShaderFile, GLchar *fShaderFile){
+bool Metarial::InitShader(GLchar *vShaderFile, GLchar *fShaderFile){
 	shader.buildShader(vShaderFile, fShaderFile);
 	return true;
 }
-bool Metarial::regTexture(char * file){
+bool Metarial::RegTexture(char * file){
 	Texture *new_tex = new Texture(file);
 	tex.push_back(new_tex);
 	return true;
 }
-bool Metarial::bind(){
+bool Metarial::Bind(){
 	for (int i = 0; i < tex.size(); i++){
 		char name[64] = { 0 };
 		sprintf(name, "tex%d", i);
