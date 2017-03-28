@@ -15,8 +15,6 @@ public:
 	void OnRenderBegin();
 	void OnRenderEnd();
 
-	void AddToRenderQueue();
-
 	void Render();
 
 public:
@@ -28,8 +26,7 @@ public:
 
 	std::vector<Command> command_list;
 	bool AddToCommandList(Command cmd);
-	bool Fresh();
-	bool Clear();
-
+	bool ClearCommandList();
+	bool FreshCommandList();
 }
 #endif
