@@ -2,20 +2,24 @@
 #define _RENDERENGINE_HPP
 #pragma once
 #include<Base.hpp>
-#incldue<vector>
+#include<vector>
+#include <GL/glew.h>
 
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
 class RenderEngine
 {
 public:
 	RenderEngine();
 	~RenderEngine();
 
-	bool Start();
+	bool Start(char * name, int width, int height);
+	void Update(Uint32 delta);
 
 	void OnRenderBegin();
 	void OnRenderEnd();
 
-	void Render();
+	void RenderFrame();
 
 public:
 
@@ -28,5 +32,5 @@ public:
 	bool AddToCommandList(Command cmd);
 	bool ClearCommandList();
 	bool FreshCommandList();
-}
+};
 #endif
