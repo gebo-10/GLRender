@@ -10,10 +10,8 @@ RenderEngine::~RenderEngine()
 
 }
 
-bool RenderEngine::Start(char * name,int width,int height)
+bool RenderEngine::Init(char * name,int width,int height)
 {
-	SDL_Window	*pWindow = NULL;
-	SDL_Renderer*pRenderer = NULL;
 	int win_width = width, win_height = height;
 	// 1. initialize SDL
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
@@ -34,7 +32,7 @@ bool RenderEngine::Start(char * name,int width,int height)
 		printf("Create window fail:%s\n", SDL_GetError());
 	}
 
-	SDL_GLContext glcontext = SDL_GL_CreateContext(pWindow);
+	glcontext = SDL_GL_CreateContext(pWindow);
 	pRenderer = SDL_CreateRenderer(pWindow, -1, 0);
 	glewInit();
 
@@ -65,7 +63,11 @@ void RenderEngine::OnRenderEnd()
 void RenderEngine::RenderFrame()
 {
 	OnRenderBegin();
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+
+
+	SDL_GL_SwapWindow(pWindow);
 	OnRenderEnd();
 }
 

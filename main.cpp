@@ -86,7 +86,7 @@ int main(int argc, char* args[])
 	int win_width = 500, win_height = 500;
 	App app;
 	app.Init("test", win_width, win_height);
-	app.Start()
+	app.Start();
 
 	initCamera();
 	Model model;

@@ -71,7 +71,7 @@ bool App::Init(char * name, int width, int height)
 	this->width = width;
 	this->height = height;
 	
-	render.Start(name,width,height);
+	render.Init(name,width,height);
 	scene.Init(&render);
 
 }
