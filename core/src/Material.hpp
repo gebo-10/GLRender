@@ -4,34 +4,34 @@
 #include <vector>
 #include <ShaderProgram.hpp>
 #include <Texture.hpp>
-class Metarial
+class Material
 {
 public:
 	vector<Texture *> tex;
 	ShaderProgram shader;
 public:
-	Metarial();
-	~Metarial();
+	Material();
+	~Material();
 	bool RegTexture(char * file);
 	bool InitShader(GLchar *vShaderFile, GLchar *fShaderFile);
 	bool Bind(void);
 };
-Metarial::Metarial(){
+Material::Material(){
 
 }
-Metarial::~Metarial(){
+Material::~Material(){
 
 }
-bool Metarial::InitShader(GLchar *vShaderFile, GLchar *fShaderFile){
+bool Material::InitShader(GLchar *vShaderFile, GLchar *fShaderFile){
 	shader.buildShader(vShaderFile, fShaderFile);
 	return true;
 }
-bool Metarial::RegTexture(char * file){
+bool Material::RegTexture(char * file){
 	Texture *new_tex = new Texture(file);
 	tex.push_back(new_tex);
 	return true;
 }
-bool Metarial::Bind(){
+bool Material::Bind(){
 	for (int i = 0; i < tex.size(); i++){
 		char name[64] = { 0 };
 		sprintf(name, "tex%d", i);

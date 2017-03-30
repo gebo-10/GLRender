@@ -1,13 +1,14 @@
 #ifndef CAMERA_H
 #define CAMERA_H
-
+#pragma once
 #include<Common.hpp>
  
 class Camera
 {
 public:
 	Camera();
-	Camera(const Vector3d& pos, const Vector3d& target, const Vector3d& up);
+	Camera(const Vector3d pos, const Vector3d target, const Vector3d up);
+	void Init(const Vector3d pos, const Vector3d target, const Vector3d up);
 	void setModelViewMatrix();
 	void setShape(float viewAngle, float aspect, float Near, float Far);
 	void slide(float du, float dv, float dn);
@@ -17,10 +18,13 @@ public:
 	float getDist();
 
 private:
-	Vector3d m_pos;
-	Vector3d m_target;
-	Vector3d m_up;
+	Vector3d pos;
+	Vector3d target;
+	Vector3d up;
 	Vector3d u, v, n;
+
+public:
+	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 };
 
 #endif

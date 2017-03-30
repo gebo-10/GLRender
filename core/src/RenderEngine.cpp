@@ -1,5 +1,5 @@
 #include <RenderEngine.hpp>
-
+#include <Mesh.h>
 RenderEngine::RenderEngine()
 {
 
@@ -41,6 +41,8 @@ bool RenderEngine::Init(char * name,int width,int height)
 	glDepthFunc(GL_LEQUAL);
 	glClearDepth(10.0);
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+	vao.Init();
 	return true;
 }
 
@@ -57,7 +59,7 @@ void RenderEngine::OnRenderBegin()
 
 void RenderEngine::OnRenderEnd()
 {
-
+	command_list.clear();
 }
 
 void RenderEngine::RenderFrame()
@@ -65,7 +67,34 @@ void RenderEngine::RenderFrame()
 	OnRenderBegin();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	for (int i = 0; i < command_list.size();i++)
+	{
+		Command cmd = command_list[i];
+		switch (cmd.type)
+		{
+		case RenderEngine::BIND_VAO:
+			break;
+		case RenderEngine::DRAW_MESH:
+		{
+			Mesh * mesh = (Mesh *)cmd.arg;
+			vao.NewVBO(mesh->vertex.size() * sizeof(float), (void *)&mesh->vertex[0]);
+			glEnableVertexAttribArray(0);
+			glVertexAttribPointer((GLuint)0, 3, GL_FLOAT, true, 0, 0);
 
+			vao.NewVBO(mesh->uv.size() * sizeof(float), (void *)&mesh->uv[0]);
+			glEnableVertexAttribArray(1);
+			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+
+			vao.InitEBO(mesh->index.size() * sizeof(int), (void *)&mesh->index[0]);
+			glDrawElements(GL_TRIANGLES, mesh->index.size(), GL_UNSIGNED_INT, 0);
+		}
+		break;
+
+		default:
+			cout << "unknow cmd type" << endl;
+			break;
+		}
+	}
 
 	SDL_GL_SwapWindow(pWindow);
 	OnRenderEnd();

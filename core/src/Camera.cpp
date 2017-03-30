@@ -1,15 +1,20 @@
-#include <Camera.hpp>
+#include <Camera.h>
 
 Camera::Camera()
 {
-
+	
 }
 
-Camera::Camera(const Vector3d &pos, const Vector3d &target, const Vector3d &up)
+Camera::Camera(const Vector3d pos, const Vector3d target, const Vector3d up)
 {
-	m_pos = pos;
-	m_target = target;
-	m_up = up;
+	Init(pos, target, up);
+}
+
+void Camera::Init(const Vector3d pos, const Vector3d target, const Vector3d up)
+{
+	this->pos = pos;
+	this->target = target;
+	this->up = up;
 	n = Vector3d(pos.x() - target.x(), pos.y() - target.y(), pos.z() - target.z());
 	u = Vector3d(up.cross(n).x(), up.cross(n).y(), up.cross(n).z());
 	v = Vector3d(n.cross(u).x(), n.cross(u).y(), n.cross(u).z());
@@ -25,9 +30,9 @@ Camera::Camera(const Vector3d &pos, const Vector3d &target, const Vector3d &up)
 void Camera::setModelViewMatrix()
 {
 	double m[16];
-	m[0] = u.x(); m[4] = u.y(); m[8] = u.z(); m[12] = -m_pos.dot(u);
-	m[1] = v.x(); m[5] = v.y(); m[9] = v.z(); m[13] = -m_pos.dot(v);
-	m[2] = n.x(); m[6] = n.y(); m[10] = n.z(); m[14] = -m_pos.dot(n);
+	m[0] = u.x(); m[4] = u.y(); m[8] = u.z(); m[12] = -pos.dot(u);
+	m[1] = v.x(); m[5] = v.y(); m[9] = v.z(); m[13] = -pos.dot(v);
+	m[2] = n.x(); m[6] = n.y(); m[10] = n.z(); m[14] = -pos.dot(n);
 	m[3] = 0;  m[7] = 0;  m[11] = 0;  m[15] = 1.0;
 	glMatrixMode(GL_MODELVIEW);
 	glLoadMatrixd(m);     //用M矩阵替换原视点矩阵
@@ -43,12 +48,12 @@ void  Camera::setShape(float viewAngle, float aspect, float Near, float Far)
 void Camera::slide(float du, float dv, float dn)
 {
 	//std::cout<<"u.x:"<<u.x()<<std::endl;
-	m_pos(0) = m_pos(0) + du*u.x() + dv*v.x() + dn*n.x();
-	m_pos(1) = m_pos(1) + du*u.y() + dv*v.y() + dn*n.y();
-	m_pos(2) = m_pos(2) + du*u.z() + dv*v.z() + dn*n.z();
-	m_target(0) = m_target(0) + du*u.x() + dv*v.x() + dn*n.x();
-	m_target(1) = m_target(0) + du*u.y() + dv*v.y() + dn*n.y();
-	m_target(2) = m_target(0) + du*u.z() + dv*v.z() + dn*n.z();
+	pos(0) = pos(0) + du*u.x() + dv*v.x() + dn*n.x();
+	pos(1) = pos(1) + du*u.y() + dv*v.y() + dn*n.y();
+	pos(2) = pos(2) + du*u.z() + dv*v.z() + dn*n.z();
+	target(0) = target(0) + du*u.x() + dv*v.x() + dn*n.x();
+	target(1) = target(0) + du*u.y() + dv*v.y() + dn*n.y();
+	target(2) = target(0) + du*u.z() + dv*v.z() + dn*n.z();
 	setModelViewMatrix();
 }
 
@@ -108,7 +113,7 @@ void Camera::yaw(float angle)
 
 float  Camera::getDist()
 {
-	float dist = pow(m_pos.x(), 2) + pow(m_pos.y(), 2) + pow(m_pos.z(), 2);
+	float dist = pow(pos.x(), 2) + pow(pos.y(), 2) + pow(pos.z(), 2);
 	return pow(dist, 0.5);
 }
 
