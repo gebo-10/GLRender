@@ -5,17 +5,17 @@
 #include<Camera.h>
 #include<vector>
 #include <RenderEngine.hpp>
-class SceneManager;
-typedef bool (SceneManager::*DealFun)(void *);
+
 class SceneManager{
 public:
+	int tag_id;
 	SceneObject *root;
-	RenderEngine *render;
 	//cameras lights_;用组件方加
 public:
 	SceneManager();
 	~SceneManager();
-	void Init(RenderEngine *render);
+	void Init();
+	int GenTag();
 	void Update(Uint32 delta);
 
 	SceneObject * getRoot(){ return root; };
@@ -23,7 +23,7 @@ public:
 	bool AddObject(SceneObject * parent, SceneObject * obj);
 	
 	void VistObj(SceneObject * obj, Uint32 delta);
-	bool ForEach(SceneObject * obj, DealFun * fun, vector <SceneObject *> &obj_list);
-
+	void DelObject(SceneObject * obj);
+	
 };
 #endif

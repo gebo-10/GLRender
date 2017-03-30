@@ -1,7 +1,7 @@
 #include<SceneManager.h>
 SceneManager::SceneManager()
 {
-
+	tag_id = 0;
 }
 
 SceneManager::~SceneManager()
@@ -9,10 +9,14 @@ SceneManager::~SceneManager()
 
 }
 
-void SceneManager::Init(RenderEngine *render)
+void SceneManager::Init()
 {
 	root = new SceneObject;
-	this->render = render;
+}
+
+int SceneManager::GenTag()
+{
+	return ++tag_id;
 }
 
 void SceneManager::Update(Uint32 delta)
@@ -20,12 +24,17 @@ void SceneManager::Update(Uint32 delta)
 	VistObj(root,delta);
 }
 
+SceneObject * SceneManager::NewObject()
+{
+	return new SceneObject;
+}
+
 void SceneManager::VistObj(SceneObject * obj,Uint32 delta)
 {
 	obj->Update(delta);
 	for (int i = 0; i < obj->children.size();i++)
 	{
-		obj->children[i]->Update(delta);
+		VistObj(obj->children[i], delta);
 	}
 }
 
@@ -35,12 +44,14 @@ bool SceneManager::AddObject(SceneObject * parent, SceneObject * obj){
 	return true;
 }
 
-SceneObject * SceneManager::NewObject()
-{
-	return new SceneObject;
+void SceneManager::DelObject(SceneObject * obj){
+	for (int i = 0; i < obj->children.size(); i++)
+	{
+		DelObject(obj);
+	}
+	delete obj;
 }
 
-bool SceneManager::ForEach(SceneObject * obj, DealFun * fun, vector <SceneObject *> &obj_list)
-{
+SceneObject * SceneManager::FindObject(int tag){
 
 }
