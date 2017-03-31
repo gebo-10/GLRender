@@ -59,7 +59,7 @@ void RenderEngine::OnRenderBegin()
 
 void RenderEngine::OnRenderEnd()
 {
-	command_list.clear();
+	ClearCommandList();
 }
 
 void RenderEngine::RenderFrame()
@@ -87,11 +87,12 @@ void RenderEngine::RenderFrame()
 
 			vao.InitEBO(mesh->index.size() * sizeof(int), (void *)&mesh->index[0]);
 			glDrawElements(GL_TRIANGLES, mesh->index.size(), GL_UNSIGNED_INT, 0);
+			cout << "draw_mesh " << mesh->vertex.size() << endl;
 		}
 		break;
 
 		default:
-			cout << "unknow cmd type" << endl;
+			LOG(WARNING) << "unknow cmd type:" << cmd.type  << endl;
 			break;
 		}
 	}
@@ -103,11 +104,13 @@ void RenderEngine::RenderFrame()
 
 bool RenderEngine::AddToCommandList(Command cmd)
 {
+	command_list.push_back(cmd);
 	return true;
 }
 
 bool RenderEngine::ClearCommandList()
 {
+	command_list.clear();
 	return true;
 }
 

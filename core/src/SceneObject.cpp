@@ -4,6 +4,8 @@ SceneObject::SceneObject()
 {
 	tag = App::Instance()->scene.GenTag();
 	name = "";
+	parent = NULL;
+	comps.clear();
 }
 
 SceneObject::~SceneObject()
@@ -26,4 +28,28 @@ void SceneObject::Update(Uint32 delta)
 void SceneObject::AddComponent(Component *comp)
 {
 	comps.push_back(comp);
+}
+
+Component * SceneObject::GetComponent(int tag)
+{
+	for (Uint32 i = 0; i < comps.size(); i++)
+	{
+		if (comps[i]->tag == tag)
+		{
+			return comps[i];
+		}
+	}
+	return NULL;
+}
+
+Component * SceneObject::GetComponent(string name)
+{
+	for (Uint32 i = 0; i < comps.size(); i++)
+	{
+		if (comps[i]->name == name)
+		{
+			return comps[i];
+		}
+	}
+	return NULL;
 }

@@ -13,6 +13,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <glog/logging.h>
 using   namespace   std;
 
 #endif

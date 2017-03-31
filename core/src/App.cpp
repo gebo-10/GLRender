@@ -23,8 +23,11 @@ bool App::Init(char * name, int width, int height)
 	this->width = width;
 	this->height = height;
 
+	google::InitGoogleLogging(name);
+	FLAGS_log_dir = "./log";
+	LOG(WARNING) << "unknow cmd type:";
 	render.Init(name, width, height);
-	scene.Init(&render);
+	scene.Init();
 
 	logic.Init();
 	return true;
@@ -56,7 +59,7 @@ void App::MainLoop()
 		}
 		Update();
 
-		SDL_Delay(100);//保护下
+		//SDL_Delay(100);//保护下
 	}
 }
 

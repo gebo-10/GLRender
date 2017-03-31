@@ -52,6 +52,18 @@ void SceneManager::DelObject(SceneObject * obj){
 	delete obj;
 }
 
-SceneObject * SceneManager::FindObject(int tag){
-
+SceneObject * SceneManager::FindObject(int tag,SceneObject * root){
+	if (root==NULL)
+	{
+		root = this->root;
+	}
+	for (SceneManager::Iterator itr(root); itr.IsEnd() ==false;++itr)
+	{
+		SceneObject*now = itr.GetCurrent();
+		if (now->tag == tag)
+		{
+			return now;
+		}
+	}
+	return NULL;
 }

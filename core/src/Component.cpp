@@ -2,7 +2,8 @@
 
 Component::Component()
 {
-
+	tag=0;
+	name="";
 }
 
 Component::~Component()

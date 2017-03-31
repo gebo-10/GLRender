@@ -11,5 +11,5 @@ using namespace Eigen;
 #pragma comment(lib,"SDL2main.lib") 
 #pragma comment(lib,"SDL2.lib") 
 #pragma comment(lib,"SDL2_image.lib") 
-
+#pragma  comment(lib,"libglog.lib")
 #endif
