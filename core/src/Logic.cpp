@@ -47,8 +47,7 @@ void Logic::Do(Uint32 delta)
 	static Vector2i lastPos;
 	int dx, dy;
 	SDL_Event e;
-	while (SDL_PollEvent(&e)){
-		cout << e.type << endl;
+	if (SDL_PollEvent(&e)){
 		switch (e.type){
 		case SDL_QUIT:
 			app->Stop();
@@ -102,8 +101,9 @@ void Logic::Do(Uint32 delta)
 			break;
 		}
 	}
+	while (SDL_PollEvent(&e)){}
 
-
+	//SDL_PumpEvents();
 	//arg = (arg + 0.1);
 	//int tmpint = (int)arg;
 	//arg = arg - tmpint;

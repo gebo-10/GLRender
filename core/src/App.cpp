@@ -8,7 +8,7 @@ App::App()
 
 App::~App()
 {
-
+	
 }
 App * App::Instance()
 {
@@ -23,9 +23,10 @@ bool App::Init(char * name, int width, int height)
 	this->width = width;
 	this->height = height;
 
-	google::InitGoogleLogging(name);
-	FLAGS_log_dir = "./log";
-	LOG(WARNING) << "unknow cmd type:";
+	script.Init();
+	log.Init(name);
+	db.Init("game.db");
+
 	render.Init(name, width, height);
 	scene.Init();
 
@@ -40,26 +41,36 @@ bool App::Start()
 	return true;
 }
 
+void App::Pause()
+{
+	status = APP_PAUSE;
+}
+
 void App::Stop()
 {
+	status = APP_STOP;
+}
+
+void App::Destory(){
+	LOG(INFO) << "APP Destory";
 	SDL_Quit();
 }
+
 
 void App::MainLoop()
 {
 	while (1){
 		if (status == APP_PAUSE)
 		{
-			SDL_Delay(200);//delay
+			SDL_Delay(200);//delay保护下
 			continue;
 		}
 		if (status == APP_STOP)
 		{
+			Destory();
 			return;
 		}
 		Update();
-
-		//SDL_Delay(100);//保护下
 	}
 }
 

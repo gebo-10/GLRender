@@ -6,7 +6,9 @@
 #include <RenderEngine.hpp>
 #include <Time.h>
 #include <Logic.h>
-
+#include <ScriptEngine.h>
+#include <Log.h>
+#include <DB.h>
 class App
 {
 private:
@@ -30,20 +32,25 @@ public:
 	int status;
 	Uint32 last_tick;
 
-	Timer timer;
-
+	ScriptEngine	script;
 	SceneManager	scene;
 	RenderEngine	render;
+	Timer			timer;
 	Logic			logic;
-	
+	Log				log;
+	DB				db;
+
+
 public:
 
 	bool Init(char * name, int width, int height);
 	bool Start();
+	void Pause();
 	void Stop();
-	void MainLoop();
-	
+
+	void Destory();
 	void Update();
+	void MainLoop();
 };
 
 #endif

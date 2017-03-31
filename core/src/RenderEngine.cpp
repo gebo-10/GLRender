@@ -49,6 +49,7 @@ bool RenderEngine::Init(char * name,int width,int height)
 void RenderEngine::Update(Uint32 delta)
 {
 	//控制间隔时间
+	//LOG(INFO) << delta;
 	RenderFrame();
 }
 
@@ -87,7 +88,6 @@ void RenderEngine::RenderFrame()
 
 			vao.InitEBO(mesh->index.size() * sizeof(int), (void *)&mesh->index[0]);
 			glDrawElements(GL_TRIANGLES, mesh->index.size(), GL_UNSIGNED_INT, 0);
-			cout << "draw_mesh " << mesh->vertex.size() << endl;
 		}
 		break;
 

@@ -12,4 +12,6 @@ using namespace Eigen;
 #pragma comment(lib,"SDL2.lib") 
 #pragma comment(lib,"SDL2_image.lib") 
 #pragma  comment(lib,"libglog.lib")
+#pragma  comment(lib,"lua5.1.lib")
+#pragma  comment(lib,"sqlite3.lib")
 #endif
