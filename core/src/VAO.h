@@ -16,7 +16,7 @@ public:
 	void Init(void);
 	void Bind(void);
 	void UnBind(void);
-	int NewVBO(int data_size, void * buff, int type = GL_ARRAY_BUFFER, int sign = GL_STATIC_DRAW);
+	int NewVBO(int data_size, void * buff, int type = GL_ARRAY_BUFFER, int sign = GL_STREAM_DRAW);
 	void InitEBO(int data_size, void * buff);
 };
 

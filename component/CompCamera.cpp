@@ -15,8 +15,6 @@ CompCamera::~CompCamera()
 void CompCamera::Init(const Vector3d& pos, const Vector3d& target, const Vector3d& up)
 {
 	camera.Init(pos, target, up);
-
-	SetViewPort(100, 100);
 }
 
 void CompCamera::Update(Uint32 delta)
@@ -40,7 +38,7 @@ void CompCamera::SetViewPort(int width, int height)
 	glLoadIdentity();
 	gluPerspective(45.0, (GLfloat)win_width / (GLfloat)win_height, 0.1, 1000.0);
 	glMatrixMode(GL_MODELVIEW);
-	gluLookAt(0.0, 0.0, 12.0, 0.0, 0.0, 0, 0.0, 1.0, 0.0);
+	//gluLookAt(0.0, 0.0, 12.0, 0.0, 0.0, 0, 0.0, 1.0, 0.0);
 }
 
 void CompCamera::RotateX(float angle)

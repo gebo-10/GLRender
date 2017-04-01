@@ -16,14 +16,24 @@ bool Logic::Init()
 	App *app = App::Instance();
 	SceneObject *obj = new SceneObject();
 	obj->tag = 110;
-	Component * comp = new CompCamera();
-	comp->SetName("main_camera");
-	obj->AddComponent(comp);
+	CompCamera * camera = new CompCamera();
+	camera->SetName("main_camera");
+	camera->SetViewPort(500, 500);
+	camera->camera.slide(0, 0, -50);
+	obj->AddComponent(camera);
 
 	CompMeshRender *comp_mesh = new CompMeshRender();
 	comp_mesh->Init("box.fbx");
 	obj->AddComponent(comp_mesh);
 	app->scene.AddObject(app->scene.getRoot(), obj);
+
+	for (int i = 0; i < 10;i++)
+	{
+		comp_mesh = new CompMeshRender();
+		comp_mesh->Init("box.fbx");
+		obj->AddComponent(comp_mesh);
+	}
+	
 
 	return true;
 }
@@ -47,7 +57,9 @@ void Logic::Do(Uint32 delta)
 	static Vector2i lastPos;
 	int dx, dy;
 	SDL_Event e;
-	if (SDL_PollEvent(&e)){
+	int times = 3;//??? Õ¦Õû
+	while (SDL_PollEvent(&e) && times >0){
+		times--;
 		switch (e.type){
 		case SDL_QUIT:
 			app->Stop();

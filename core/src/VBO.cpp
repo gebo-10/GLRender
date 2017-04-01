@@ -3,7 +3,7 @@
 VBO::VBO() :id(0), type(GL_ARRAY_BUFFER), buff_len(0), data_size(0), buff(0){}
 
 //data_size 为字节数
-void VBO::init(int data_size, void * buff, int type = GL_ARRAY_BUFFER, int sign = GL_STATIC_DRAW){
+void VBO::init(int data_size, void * buff, int type , int sign ){
 	glGenBuffers(1, &id);
 	glBindBuffer(type, id);
 	glBufferData(type, data_size, buff, sign);
@@ -12,4 +12,7 @@ void VBO::init(int data_size, void * buff, int type = GL_ARRAY_BUFFER, int sign 
 void VBO::bind(void){
 	glBindBuffer(type, id);
 }
-VBO::~VBO(){}
+VBO::~VBO(){
+	//GLuint  buffers[] = { id };
+	//glDeleteBuffers(1,&id); 崩溃了???
+}

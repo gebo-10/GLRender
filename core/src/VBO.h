@@ -16,7 +16,7 @@ public:
 public:
 	VBO();
 	void bind(void);
-	void init( int data_size, void * buff,int type, int sign);
+	void init(int data_size, void * buff, int type = GL_ARRAY_BUFFER, int sign = GL_STREAM_DRAW);
 	~VBO();
 
 private:
