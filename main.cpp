@@ -5,6 +5,7 @@
 
 int main(int argc, char* args[])
 {
+
 	App *app=App::Instance();
 	app->Init("test", 500, 500);
 	app->Start();

@@ -23,7 +23,15 @@ void SceneObject::Update(Uint32 delta)
 	{
 		comps[i]->Update(delta);
 	}
+	UpdateTransform();
 }
+
+
+void SceneObject::UpdateTransform()
+{
+	kmMat4Translation(&transform, 0, 0, 0);
+}
+
 
 void SceneObject::AddComponent(Component *comp)
 {

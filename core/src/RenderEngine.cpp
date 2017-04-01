@@ -1,4 +1,4 @@
-#include <RenderEngine.hpp>
+#include <RenderEngine.h>
 #include <Mesh.h>
 RenderEngine::RenderEngine()
 {
@@ -71,36 +71,8 @@ void RenderEngine::RenderFrame()
 	vao.vbos.clear();//??是否需要清楚vbo clear是否 能清除显存的vbo
 	for (int i = 0; i < command_list.size();i++)
 	{
-		Command cmd = command_list[i];
-		switch (cmd.type)
-		{
-		case RenderEngine::BIND_VAO:
-			break;
-		case RenderEngine::DRAW_MESH:
-		{
-			glMatrixMode(GL_MODELVIEW);
-			glPushMatrix();//保存摄像机矩阵
-			glTranslatef(20*i, 0, -30);//构建 转移矩阵 并且与当前视图矩阵 结合 影响本次渲染
-			Mesh * mesh = (Mesh *)cmd.arg;
-			vao.NewVBO(mesh->vertex.size() * sizeof(float), (void *)&mesh->vertex[0]);
-			glEnableVertexAttribArray(0);
-			glVertexAttribPointer((GLuint)0, 3, GL_FLOAT, true, 0, 0);
-
-			vao.NewVBO(mesh->uv.size() * sizeof(float), (void *)&mesh->uv[0]);
-			glEnableVertexAttribArray(1);
-			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
-
-			vao.InitEBO(mesh->index.size() * sizeof(int), (void *)&mesh->index[0]);
-			
-			glDrawElements(GL_TRIANGLES, mesh->index.size(), GL_UNSIGNED_INT, 0);
-			glPopMatrix();//恢复摄像机矩阵
-		}
-		break;
-
-		default:
-			LOG(WARNING) << "unknow cmd type:" << cmd.type  << endl;
-			break;
-		}
+		RenderCommand * cmd = command_list[i];
+		cmd->Do(this);
 	}
 
 	SDL_GL_SwapWindow(pWindow);
@@ -108,7 +80,7 @@ void RenderEngine::RenderFrame()
 }
 
 
-bool RenderEngine::AddToCommandList(Command cmd)
+bool RenderEngine::AddToCommandList(RenderCommand * cmd)
 {
 	command_list.push_back(cmd);
 	return true;

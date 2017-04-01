@@ -7,6 +7,7 @@
 #include <VAO.h>
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
+#include <RenderCommand.h>
 class RenderEngine
 {
 public:
@@ -29,18 +30,9 @@ public:
 	void RenderFrame();
 
 public:
-	enum CommandType
-	{
-		BIND_VAO,
-		DRAW_MESH,
-	};
-	struct Command{
-		int type;
-		void * arg;
-	};
 
-	std::vector<Command> command_list;
-	bool AddToCommandList(Command cmd);
+	std::vector<RenderCommand * > command_list;
+	bool AddToCommandList(RenderCommand *cmd);
 	bool ClearCommandList();
 	bool FreshCommandList();
 };

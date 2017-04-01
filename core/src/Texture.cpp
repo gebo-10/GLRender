@@ -1,23 +1,5 @@
-#ifndef _TEXTURE_HPP
-#define _TEXTURE_HPP
-#pragma once
-#include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
-#include <GL/glew.h>
-class Texture
-{
-public:
-	SDL_Surface * img;
-	GLuint tex_id ;
-	
+#include <Texture.h>
 
-
-public:
-	Texture(char * file);
-	~Texture();
-	void init(char * file);
-	void bind(int shader, int texture_index, char * name);
-};
 Texture::Texture(char *file){
 	init(file);
 }
@@ -47,5 +29,3 @@ void Texture::bind(int shader, int texture_index, char * name){
 	glBindTexture(GL_TEXTURE_2D, tex_id);
 	glUniform1f(glGetUniformLocation(shader, name), 0);
 }
-
-#endif

@@ -9,7 +9,7 @@ public:
 	int tag;
 	std::string name;
 
-	Matrix <double,4, 4> transform;
+	kmMat4 transform;
 	Vector3d position;
 	Vector3d rotate;
 	Vector3d scale;
@@ -29,6 +29,9 @@ public:
 	string SetName(){ return this->name; };
 
 	void Update(Uint32 delta);
+
+	void UpdateTransform();
+
 	void AddComponent(Component *comp);
 	Component * GetComponent(int tag);
 	Component * GetComponent(string name);

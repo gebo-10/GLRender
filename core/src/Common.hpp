@@ -14,4 +14,6 @@ using namespace Eigen;
 #pragma  comment(lib,"libglog.lib")
 #pragma  comment(lib,"lua5.1.lib")
 #pragma  comment(lib,"sqlite3.lib")
+#pragma  comment(lib,"kazmath.lib")
+
 #endif
