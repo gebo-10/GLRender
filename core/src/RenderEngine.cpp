@@ -40,8 +40,8 @@ bool RenderEngine::Init(char * name,int width,int height)
 	glDepthRange(0.0, 10.0);
 	glDepthFunc(GL_LEQUAL);
 	glClearDepth(10.0);
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	vao.Init();
 	char memery[1024*1] = { 0 };
 	vao.NewVBO(sizeof(memery), (void *)&memery);

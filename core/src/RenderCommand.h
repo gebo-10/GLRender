@@ -4,6 +4,7 @@
 #include<Common.hpp>
 #include <Mesh.h>
 #include <Material.h>
+#include <kazmath.h>
 class RenderEngine;
 
 enum CommandType
@@ -11,6 +12,7 @@ enum CommandType
 	EMPTY,
 	BIND_VAO,
 	DRAW_MESH,
+	DRAW_LINES,
 };
 
 class RenderCommand
@@ -38,6 +40,22 @@ public:
 	~RcmdMesh(){};
 
 	void Init(Mesh *mesh, Material *material);
+	void Deal(RenderEngine * render);
+
+};
+
+class RcmdLine :public RenderCommand
+{
+public:
+	
+	vector <kmVec3> vertex;
+	Color		color;
+
+public:
+	RcmdLine() :RenderCommand(DRAW_LINES){ };
+	~RcmdLine(){};
+
+	void Init(vector <kmVec3> vertex, Color color);
 	void Deal(RenderEngine * render);
 
 };

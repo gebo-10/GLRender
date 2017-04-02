@@ -16,6 +16,13 @@
 #include <glog/logging.h>
 #include <glog/raw_logging.h>
 #include <kazmath.h>
+struct Color
+{
+	char r;
+	char g;
+	char b;
+	char a;
+};
 using   namespace   std;
 
 #endif

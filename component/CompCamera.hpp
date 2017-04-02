@@ -3,11 +3,14 @@
 #pragma once
 #include <Component.h>
 #include <Camera.h>
+#include <RenderCommand.h>
 class CompCamera :public Component
 {
 public:
 	int win_width;
 	int win_height;
+
+	RcmdLine cmd_line;
 
 	Camera camera;
 	CompCamera();
