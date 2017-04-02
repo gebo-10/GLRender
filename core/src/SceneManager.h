@@ -41,6 +41,7 @@ public:
 			now = root;
 			child_index = 0;
 			level_stack.push(0);
+			level_stack.push(0);
 		};
 
 		~Iterator()
@@ -86,8 +87,8 @@ public:
 			}
 			else if (child_index  < now->parent->children.size())
 			{
-				child_index++;
 				now = now->parent->children[child_index];
+				child_index++;
 			}
 		}
 		bool IsEnd(){

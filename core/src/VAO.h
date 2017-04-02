@@ -9,7 +9,6 @@ class VAO
 public:
 	GLuint id;
 	vector<VBO> vbos;
-	VBO ebo;		//Ë÷Òý»º´æ
 public:
 	VAO();
 	~VAO();
@@ -17,7 +16,8 @@ public:
 	void Bind(void);
 	void UnBind(void);
 	int NewVBO(int data_size, void * buff, int type = GL_ARRAY_BUFFER, int sign = GL_STREAM_DRAW);
-	void InitEBO(int data_size, void * buff);
+	int NewEBO(int data_size, void * buff, int type = GL_ELEMENT_ARRAY_BUFFER, int sign = GL_STREAM_DRAW);
+	bool UpdateData(int index, int data_size, void *buff);
 };
 
 

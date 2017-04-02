@@ -17,14 +17,14 @@ int VAO::NewVBO(int data_size, void * buff, int type, int sign ){
 	vbo.init(data_size, buff, type, sign);
 
 	vbos.push_back(vbo);
-	int count = vbos.size() - 1;
-	return count;
+	return vbos.size() - 1;
 }
-void VAO::InitEBO(int data_size, void * buff) {
-	int type = GL_ELEMENT_ARRAY_BUFFER;
-	int sign = GL_STATIC_DRAW;
+int VAO::NewEBO(int data_size, void * buff,int type, int sign ) {
+	return NewVBO(data_size,buff, type, sign);
+}
 
+bool VAO::UpdateData(int index, int data_size, void *buff)
+{
 	Bind();
-	ebo.init(data_size, buff, type, sign);
-
+	return vbos[index].UpdateDate(data_size,buff);
 }

@@ -43,6 +43,10 @@ bool RenderEngine::Init(char * name,int width,int height)
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 	vao.Init();
+	char memery[1024*1] = { 0 };
+	vao.NewVBO(sizeof(memery), (void *)&memery);
+	vao.NewVBO(sizeof(memery), (void *)&memery);
+	vao.NewVBO(sizeof(memery), (void *)&memery, GL_ELEMENT_ARRAY_BUFFER);
 	return true;
 }
 
@@ -68,7 +72,6 @@ void RenderEngine::RenderFrame()
 	OnRenderBegin();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	vao.vbos.clear();//??是否需要清楚vbo clear是否 能清除显存的vbo
 	for (int i = 0; i < command_list.size();i++)
 	{
 		RenderCommand * cmd = command_list[i];

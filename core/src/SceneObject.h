@@ -6,13 +6,24 @@
 
 class SceneObject{
 public:
+	enum Status
+	{
+		CRWEATED,
+		INITED,
+		ACTIVE,
+		NOT_ACTIVE,
+		DESTORIED,
+	};
+public:
 	int tag;
 	std::string name;
 
+	int status;
+
 	kmMat4 transform;
-	Vector3d position;
-	Vector3d rotate;
-	Vector3d scale;
+	kmVec3  position;
+	kmVec3  rotate;
+	kmVec3  scale;
 
 	SceneObject* parent;
 	std::vector<SceneObject *> children;
@@ -25,8 +36,8 @@ public:
 	void SetTag(int tag){ this->tag = tag; };
 	void SetName(string name){ this->name = name; };
 
-	int SetTag(){ return this->tag; };
-	string SetName(){ return this->name; };
+	int GetTag(){ return this->tag; };
+	string GetName(){ return this->name; };
 
 	void Update(Uint32 delta);
 

@@ -34,7 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define kmScalar double
 #define kmEpsilon DBL_EPSILON
 #else
-#define kmScalar double
+#define kmScalar float
 #define kmEpsilon FLT_EPSILON
 #endif
 

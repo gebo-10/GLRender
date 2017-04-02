@@ -14,12 +14,16 @@ Logic::~Logic()
 bool Logic::Init()
 {
 	App *app = App::Instance();
+
+	app->scene.getRoot()->position.x = 0;
+
 	SceneObject *obj = new SceneObject();
-	obj->tag = 110;
+	obj->position.x = 0;
+	obj->tag = 2;
 	CompCamera * camera = new CompCamera();
 	camera->SetName("main_camera");
 	camera->SetViewPort(500, 500);
-	camera->camera.slide(0, 0, -50);
+	camera->camera.slide(0, 0, 30);
 	obj->AddComponent(camera);
 
 	CompMeshRender *comp_mesh = new CompMeshRender();
@@ -29,9 +33,24 @@ bool Logic::Init()
 
 	for (int i = 0; i < 10;i++)
 	{
+
+		obj = new SceneObject();
+		obj->tag = 100+i;
+		obj->position.x = 10 * i;
+		obj->position.y = 15 * i;
+		obj->rotate.z = 45*i ;
+		obj->rotate.y = 45 * i;
+
+		obj->scale.x = 0.1 * i;
+		obj->scale.z = 0.1 * i;
+		obj->scale.y = 0.1 * i;
+
 		comp_mesh = new CompMeshRender();
+		comp_mesh->SetTag(1);
 		comp_mesh->Init("box.fbx");
+
 		obj->AddComponent(comp_mesh);
+		app->scene.AddObject(app->scene.getRoot(), obj);
 	}
 	
 
@@ -51,9 +70,8 @@ void Logic::Update(Uint32 delta)
 void Logic::Do(Uint32 delta)
 {
 	App *app = App::Instance();
-	SceneObject * obj=app->scene.FindObject(110);
+	SceneObject * obj=app->scene.FindObject(2);
 	CompCamera * camera = (CompCamera *)obj->GetComponent("main_camera");
-	int x = 0, y = 0;
 	static Vector2i lastPos;
 	int dx, dy;
 	SDL_Event e;
@@ -68,9 +86,21 @@ void Logic::Do(Uint32 delta)
 			switch (e.key.keysym.sym)
 			{
 			case SDLK_ESCAPE: app->Stop(); break;
-			case SDLK_x: x = x + 1; break;
-			case SDLK_y: y = y - 1; break;
-
+			case SDLK_x: 
+				for (int i = 0; i < 10; i++)
+				{
+					SceneObject * obj = app->scene.FindObject(100 + i);
+					obj->rotate.x++;
+				}
+			break;
+			case SDLK_y:
+				for (int i = 0; i < 10; i++)
+				{
+					SceneObject * obj = app->scene.FindObject(100 + i);
+					obj->rotate.x--;
+				}
+				
+			break;
 			default:
 				break;
 			}
@@ -78,7 +108,7 @@ void Logic::Do(Uint32 delta)
 		case SDL_MOUSEBUTTONDOWN:
 			lastPos << e.button.x, e.button.y;
 			if (e.button.button == SDL_BUTTON_LEFT){
-
+				
 			}
 			if (e.button.button == SDL_BUTTON_RIGHT){
 

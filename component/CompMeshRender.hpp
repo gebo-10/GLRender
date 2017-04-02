@@ -52,6 +52,7 @@ void CompMeshRender::Init(char *filename)
 void CompMeshRender::Update(Uint32 delta)
 {
 	App *app=App::Instance();
+	cmd.transform = &obj->transform;
 	app->render.AddToCommandList(&cmd);
 	material.Bind();
 }

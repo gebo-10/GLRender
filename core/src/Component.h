@@ -2,10 +2,12 @@
 #define _COMPONENT_HPP
 #include <Base.hpp>
 #include <SDL/SDL.h>
+class SceneObject;
 class Component{
 public:
 	int tag;
 	string name;
+	SceneObject * obj;
 	Component();
 	virtual ~Component();
 public:
@@ -17,6 +19,8 @@ public:
 
 	int SetTag(){ return this->tag ; };
 	string SetName(){ return this->name; };
+
+	void SetBelong(SceneObject * obj){ this->obj = obj; };
 };
 
 #endif

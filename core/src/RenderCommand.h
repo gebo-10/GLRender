@@ -31,7 +31,7 @@ class RcmdMesh:public RenderCommand
 public:
 	Mesh		*mesh;
 	Material	*material;
-	kmMat4 transform;
+	kmMat4 *transform;
 
 public:
 	RcmdMesh() :RenderCommand(DRAW_MESH){ };

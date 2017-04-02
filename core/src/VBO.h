@@ -8,17 +8,19 @@ class VBO
 {
 public:
 	GLuint id;
-	char * buff;
+	void * buff;
 	int data_size;
 	int buff_len;
 	int type;
+	int gpu_memery_hint;
 	
 public:
 	VBO();
+	~VBO();
 	void bind(void);
 	void init(int data_size, void * buff, int type = GL_ARRAY_BUFFER, int sign = GL_STREAM_DRAW);
-	~VBO();
-
+	
+	bool UpdateDate(int data_size, void * buff);
 private:
 
 };
