@@ -26,7 +26,6 @@ bool App::Init(char * name, int width, int height)
 	script.Init();
 	log.Init(name);
 	db.Init("game.db");
-
 	render.Init(name, width, height);
 	scene.Init();
 

@@ -33,9 +33,33 @@ void RcmdMesh::Init(Mesh *mesh, Material *material)
 
 void RcmdMesh::Deal(RenderEngine * render)
 {
+	render->CatchError();
+	kmMat4 matp;
+	kmMat4 mat;
+	//glGetFloatv(GL_MODELVIEW_MATRIX, mat);
+	
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();//保存摄像机矩阵
+
 	glMultMatrixf((*transform).mat);//当前视图矩阵 结合 影响本次渲染
+
+	//kmMat4Translation(&mat, 0, 0, -10);
+	glGetFloatv(GL_MODELVIEW_MATRIX, mat.mat);
+	glGetFloatv(GL_PROJECTION_MATRIX, matp.mat);
+	
+	glUseProgram(material->shader.id);
+
+	int local=glGetUniformLocation(material->shader.id, "MV");
+
+	int local3 = glGetUniformLocation(material->shader.id, "P");
+
+	int local2 = glGetUniformLocation(material->shader.id, "a");
+
+	glUniform1f(local2, 1.0);
+	glUniformMatrix4fv(local, 1, GL_FALSE, mat.mat);
+	glUniformMatrix4fv(local3, 1, GL_FALSE, matp.mat);
+
+	
 
 	render->vao.UpdateData(0, mesh->vertex.size() *sizeof(float), (void *)&mesh->vertex[0]);
 	glEnableVertexAttribArray(0);
@@ -49,6 +73,13 @@ void RcmdMesh::Deal(RenderEngine * render)
 
 	glDrawElements(GL_TRIANGLES, mesh->index.size(), GL_UNSIGNED_INT, 0);
 	glPopMatrix();//恢复摄像机矩阵
+	if (render->CatchError() > 0)
+	{
+		int a = 1;
+		return;
+	}
+
+	
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 void RcmdLine::Init(vector <kmVec3> vertex, Color color)
@@ -59,40 +90,39 @@ void RcmdLine::Init(vector <kmVec3> vertex, Color color)
 
 void RcmdLine::Deal(RenderEngine * render)
 {
+	render->CatchError();
+
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();//保存摄像机矩阵
-	//glLoadIdentity();
-	//glMultMatrixf((*transform).mat);//当前视图矩阵 结合 影响本次渲染
-	glLineWidth(2);
-	//glVertexPointer(2, GL_FLOAT, 0,&vertex[0]);
+	glLineWidth(1);
 
-	//glEnableClientState(GL_COLOR_ARRAY);//启用颜色数组
-	//float color[3] = { 0.5, 0.5, 0.5 };
-	//glColorPointer(3, GL_FLOAT, 0, color);
 
-	//glDrawArrays(GL_LINES, 0, vertex.size() * 3);
+	kmMat4 matp;
+	kmMat4 mat;
+	glGetFloatv(GL_MODELVIEW_MATRIX, mat.mat);
+	glGetFloatv(GL_PROJECTION_MATRIX, matp.mat);
+	int local = glGetUniformLocation(material->shader.id, "MV");
 
-	glColor3f(0.2,0.4,0.6);
+	int local3 = glGetUniformLocation(material->shader.id, "P");
 
-	float ver[2000] = { 0 };
-	for (int i = 0; i < vertex.size();i++)
-	{
-		ver[i * 3 + 0] = vertex[i].x;
-		ver[i * 3 + 1] = vertex[i].y;
-		ver[i * 3 + 2] = vertex[i].z;
-	}
-	render->vao.UpdateData(0, vertex.size() * 3 * sizeof(float), (void *)&ver[0]);
+	int local2 = glGetUniformLocation(material->shader.id, "a");
+
+	glUniform1f(local2, 1.0);
+	glUniformMatrix4fv(local, 1, GL_FALSE, mat.mat);
+	glUniformMatrix4fv(local3, 1, GL_FALSE, matp.mat);
+	
+
+	//glColor3f(0.2, 0.4, 0.6);
+
+	render->vao.UpdateData(0, vertex.size() * 3 * sizeof(float), (void *)&vertex[0]);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer((GLuint)0, 3, GL_FLOAT, true, 0, 0);
 
-	unsigned int ebo[800];
-	for (int i = 0; i < 800; i++)
-	{
-		ebo[i] = i;
-	}
-	render->vao.UpdateData(2, 800*sizeof(unsigned int), (void *)&ebo[0]);
-
-	glDrawElements(GL_POLYGON, 12, GL_UNSIGNED_INT, 0);
 	//glDrawArrays(GL_LINES, 0, vertex.size() * 3);
 	glPopMatrix();//恢复摄像机矩阵
+	GLenum err;
+	while ((err = glGetError()) != GL_NO_ERROR)
+	{
+		//LOG(ERROR) << "gl  error";
+	}
 }

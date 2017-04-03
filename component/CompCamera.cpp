@@ -16,7 +16,7 @@ CompCamera::~CompCamera()
 void CompCamera::Init(const Vector3d& pos, const Vector3d& target, const Vector3d& up)
 {
 	camera.Init(pos, target, up);
-	int num = 10;
+	int num = 20;
 	int cell = 1;
 	int half = num*cell / 2;
 	vector<kmVec3> vertex;
@@ -24,7 +24,7 @@ void CompCamera::Init(const Vector3d& pos, const Vector3d& target, const Vector3
 	for (int i = 0; i < num;i++)
 	{
 		int x1 = -half,x2 = half;
-		int y = i*cell + (-num*cell);
+		int y = i*cell + (-half);
 		kmVec3 point1 = { x1, y, 0 };
 		kmVec3 point2 = { x2, y, 0 };
 
@@ -32,12 +32,12 @@ void CompCamera::Init(const Vector3d& pos, const Vector3d& target, const Vector3
 		vertex.push_back(point2);
 
 		int y1 = -half, y2 = half;
-		int x = i*cell + (-num*cell);
-		kmVec3 pointx1 = { x, y1, 0 };
-		kmVec3 pointx2 = { x, y2, 0 };
+		int x = i*cell + (-half);
+		kmVec3 point3 = { x, y1, 0 };
+		kmVec3 point4 = { x, y2, 0 };
 
-		vertex.push_back(pointx1);
-		vertex.push_back(pointx2);
+		vertex.push_back(point3);
+		vertex.push_back(point4);
 		
 	}
 	Color color = {255,255,255,255};

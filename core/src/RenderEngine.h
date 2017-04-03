@@ -29,6 +29,8 @@ public:
 
 	void RenderFrame();
 
+	int CatchError();
+
 public:
 
 	std::vector<RenderCommand * > command_list;

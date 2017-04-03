@@ -1,5 +1,5 @@
 #include <Texture.h>
-
+#include <Base.hpp>
 Texture::Texture(char *file){
 	init(file);
 }
@@ -7,6 +7,10 @@ Texture::~Texture(){
 }
 void Texture::init(char *file){
 	img = IMG_Load(file);
+	if (img==NULL)
+	{
+		LOG(ERROR) << "Texure init ,image not exist: " << file;
+	}
 	img = SDL_ConvertSurfaceFormat(img, SDL_PIXELFORMAT_ABGR8888, 0);
 
 	glGenTextures(1, &tex_id);
