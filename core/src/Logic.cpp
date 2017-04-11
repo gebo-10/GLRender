@@ -149,6 +149,6 @@ void Logic::Do(Uint32 delta)
 	//arg = (arg + 0.1);
 	//int tmpint = (int)arg;
 	//arg = arg - tmpint;
-	//glUniform1f(loc, arg);
+	//glUniform1f(loc, arg); 
 
 }

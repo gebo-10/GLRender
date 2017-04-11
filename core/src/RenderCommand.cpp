@@ -91,12 +91,12 @@ void RcmdLine::Init(vector <kmVec3> vertex, Color color)
 void RcmdLine::Deal(RenderEngine * render)
 {
 	render->CatchError();
-
+	return;
 	glMatrixMode(GL_MODELVIEW);
 	glPushMatrix();//±£´æÉãÏñ»ú¾ØÕó
 	glLineWidth(1);
 
-
+/*
 	kmMat4 matp;
 	kmMat4 mat;
 	glGetFloatv(GL_MODELVIEW_MATRIX, mat.mat);
@@ -111,7 +111,7 @@ void RcmdLine::Deal(RenderEngine * render)
 	glUniformMatrix4fv(local, 1, GL_FALSE, mat.mat);
 	glUniformMatrix4fv(local3, 1, GL_FALSE, matp.mat);
 	
-
+*/
 	//glColor3f(0.2, 0.4, 0.6);
 
 	render->vao.UpdateData(0, vertex.size() * 3 * sizeof(float), (void *)&vertex[0]);

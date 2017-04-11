@@ -15,5 +15,6 @@ using namespace Eigen;
 #pragma  comment(lib,"lua5.1.lib")
 #pragma  comment(lib,"sqlite3.lib")
 #pragma  comment(lib,"kazmath.lib")
+#pragma  comment(lib,"libtcmalloc_minimal-debug.lib")//__tcmalloc  ∞—glog ’˚±¿¿£¡À
 
 #endif
