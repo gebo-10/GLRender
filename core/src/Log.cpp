@@ -12,7 +12,7 @@ Log::~Log()
 bool Log::Init(char * name)
 {
 	google::InitGoogleLogging(name);
-	FLAGS_log_dir = "./log";
+	FLAGS_log_dir = "./Log";
 	//FLAGS_logtostderr = true;
 	FLAGS_alsologtostderr = true;
 	FLAGS_colorlogtostderr = true;//设置输出到屏幕的日志显示相应颜色
@@ -21,9 +21,9 @@ bool Log::Init(char * name)
 
 	//google::SetStderrLogging(google::INFO); //设置级别高于 google::INFO 的日志同时输出到屏幕
 	//google::SetLogDestination(google::ERROR,"log/error_");    //设置 google::ERROR 级别的日志存储路径和文件名前缀
-	google::SetLogDestination(google::INFO, "./log/INFO_"); //设置 google::INFO 级别的日志存储路径和文件名前缀
-	google::SetLogDestination(google::WARNING, "./log/WARNING_");   //设置 google::WARNING 级别的日志存储路径和文件名前缀
-	google::SetLogDestination(google::ERROR, "./log/ERROR_");   //设置 google::ERROR 级别的日志存储路径和文件名前缀
+	google::SetLogDestination(google::INFO, "./Log/INFO_"); //设置 google::INFO 级别的日志存储路径和文件名前缀
+	google::SetLogDestination(google::WARNING, "./Log/WARNING_");   //设置 google::WARNING 级别的日志存储路径和文件名前缀
+	google::SetLogDestination(google::ERROR, "./Log/ERROR_");   //设置 google::ERROR 级别的日志存储路径和文件名前缀
 	
 	FLAGS_stop_logging_if_full_disk = true;	//当磁盘被写满时，停止日志输出
 	google::SetLogFilenameExtension("game_");	//设置文件名扩展，如平台？或其它需要区分的信息

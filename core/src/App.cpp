@@ -26,6 +26,12 @@ bool App::Init(char * name, int width, int height)
 	script.Init();
 	log.Init(name);
 	db.Init("game.db");
+
+	resource.Init("Assets/");
+	//resource.GetRes("frag.txt", [](ResItem * item) {
+	//	cout.write((char *)item->buff, item->size);
+	//});
+
 	render.Init(name, width, height);
 	scene.Init();
 
@@ -80,6 +86,7 @@ void App::Update()
 	last_tick = now_ticks;
 
 	logic.Update(delta);
+	resource.Update(delta);
 	scene.Update(delta);
 	render.Update(delta);
 }

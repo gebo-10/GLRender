@@ -13,6 +13,8 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <thread>
+#include <mutex>
 #include <glog/logging.h>
 #include <glog/raw_logging.h>
 #include <kazmath.h>

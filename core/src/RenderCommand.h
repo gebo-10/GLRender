@@ -47,7 +47,7 @@ public:
 class RcmdLine :public RenderCommand
 {
 public:
-	
+	Material	*material;
 	vector <kmVec3> vertex;
 	Color		color;
 

@@ -9,6 +9,9 @@
 #include <ScriptEngine.h>
 #include <Log.h>
 #include <DB.h>
+#include <ResourceManager.h>
+
+
 class App
 {
 private:
@@ -35,6 +38,7 @@ public:
 	ScriptEngine	script;
 	SceneManager	scene;
 	RenderEngine	render;
+	ResourceManager resource;
 	Timer			timer;
 	Logic			logic;
 	Log				log;
