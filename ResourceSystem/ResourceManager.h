@@ -10,6 +10,7 @@
 
 class ResItem {
 public:
+	string filename;
 	void * buff;
 	Uint32 size;
 	ResItem() {
@@ -22,22 +23,29 @@ public:
 		{
 			delete buff;
 			buff = NULL;
+			cout << "Res delete:" <<filename<< endl;
 		}
 	};
 };
+typedef  shared_ptr<ResItem> ResPtr;
 
 class ResourceManager {
 public:
 	FileSystem		file;
 	string			res_root;
-	map<string, ResItem*> cache;
+	map<string, weak_ptr<ResItem> > cache;
 	ResourceManager();
 	~ResourceManager();
 	bool Init(string root);
 	void Update(Uint32 delta);
 
-	bool GetRes(string name,std::function<void (ResItem*) > cb);
-	bool GetBigRes(string name, std::function<void(ResItem*) > cb);
+	bool Cache(string filename, ResPtr res);
+	bool DeCache(string filename) ;
+
+	bool GetRes(string name,std::function<void (ResPtr) > cb);
+	bool GetBigRes(string name, std::function<void(ResPtr) > cb);
+
+	bool SaveRes(string name, ResPtr res);
 };
 #endif
 

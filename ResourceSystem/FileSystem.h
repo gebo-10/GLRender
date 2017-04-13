@@ -19,6 +19,7 @@ public:
 	};
 	~FileWork() 
 	{
+		cout << "end file work" << endl;
 		//delete buff; 这个留到缓存，资源管理模块来删除
 	};
 };

@@ -28,9 +28,9 @@ bool App::Init(char * name, int width, int height)
 	db.Init("game.db");
 
 	resource.Init("Assets/");
-	//resource.GetRes("frag.txt", [](ResItem * item) {
-	//	cout.write((char *)item->buff, item->size);
-	//});
+	resource.GetRes("frag.txt", [](ResPtr res) {
+		cout.write((char *)res->buff, res->size);
+	});
 
 	render.Init(name, width, height);
 	scene.Init();

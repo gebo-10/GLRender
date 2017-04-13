@@ -10,8 +10,8 @@ class Work {
 public:
 	int status; //完成 正在做等状态
 	std::function<void(Work *) > cb;
-	Work() {};
-	virtual  ~Work() {};
+	Work() { cout << "start work" << endl; };
+	virtual  ~Work() { cout << "end work" << endl; };
 };
 class WorkQueue {
 public:
@@ -34,7 +34,7 @@ public:
 	void DealDone()
 	{
 		lock.lock();
-		vector <Work *> works = work_list;
+		vector <Work *> works ( work_list);
 		work_list.clear();
 		lock.unlock();
 		for (auto itr= works.begin();itr!=works.end();itr++)
@@ -46,7 +46,7 @@ public:
 	};
 	bool AddWork(Work * work) 
 	{
-		std::thread t([&]() {
+		std::thread t([=]() {
 			process(work);
 
 			lock.lock();
