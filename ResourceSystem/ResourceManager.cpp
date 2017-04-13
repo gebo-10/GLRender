@@ -34,7 +34,7 @@ bool ResourceManager::DeCache(string filename)
 bool ResourceManager::GetRes(string name, std::function<void(ResPtr) > cb)
 {
 	auto itr = cache.find(name);
-	if (itr!= cache.end() && !itr->second.expired() )
+	if (itr!= cache.end() && !itr->second.expired())
 	{
 		ResPtr ptr = itr->second.lock();
 		cb(ptr);
@@ -54,7 +54,9 @@ bool ResourceManager::GetRes(string name, std::function<void(ResPtr) > cb)
 			});//make_shared 不支持删除器 无法优化内存分配
 			
 			cb(ptr);
-			this->cache.insert({ name, ptr });
+			weak_ptr<ResItem> wptr(ptr);
+			this->cache[name] = wptr;
+			//this->cache.insert({ name, wptr });
 		});
 	}
 
