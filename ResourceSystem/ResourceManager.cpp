@@ -51,7 +51,7 @@ bool ResourceManager::GetRes(string name, std::function<void(ResPtr) > cb)
 				cout << "Res decache:" << res->filename << endl;
 				this->DeCache(res->filename);
 				delete res;
-			});
+			});//make_shared 不支持删除器 无法优化内存分配
 			
 			cb(ptr);
 			this->cache.insert({ name, ptr });
