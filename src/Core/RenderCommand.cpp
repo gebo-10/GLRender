@@ -47,13 +47,13 @@ void RcmdMesh::Deal(RenderEngine * render)
 	glGetFloatv(GL_MODELVIEW_MATRIX, mat.mat);
 	glGetFloatv(GL_PROJECTION_MATRIX, matp.mat);
 	
-	glUseProgram(material->shader.id);
+	glUseProgram(material->shader->id);
 
-	int local=glGetUniformLocation(material->shader.id, "MV");
+	int local=glGetUniformLocation(material->shader->id, "MV");
 
-	int local3 = glGetUniformLocation(material->shader.id, "P");
+	int local3 = glGetUniformLocation(material->shader->id, "P");
 
-	int local2 = glGetUniformLocation(material->shader.id, "a");
+	int local2 = glGetUniformLocation(material->shader->id, "a");
 
 	glUniform1f(local2, 1.0);
 	glUniformMatrix4fv(local, 1, GL_FALSE, mat.mat);

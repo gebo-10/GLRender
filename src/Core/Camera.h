@@ -1,7 +1,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 #pragma once
-#include<Common.hpp>
+#include<Common.h>
  
 class Camera
 {

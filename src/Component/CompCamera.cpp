@@ -1,4 +1,4 @@
-#include <CompCamera.hpp>
+#include <CompCamera.h>
 #include <App.h>
 CompCamera::CompCamera()
 {

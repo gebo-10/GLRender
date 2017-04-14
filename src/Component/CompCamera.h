@@ -24,6 +24,7 @@ public:
 	void RotateY(float angle);
 	void SetViewPort(int width, int height);
 };
+typedef shared_ptr<CompCamera> CompCameraPtr;
 
 #endif
 

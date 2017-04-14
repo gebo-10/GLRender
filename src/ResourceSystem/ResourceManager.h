@@ -7,7 +7,11 @@
 //3.资源回调
 //4 资源预取技术 能不能 改变回调 
 //6 内存malloc free 优化
-
+enum ResType
+{
+	NORMAL,
+	SHADER,
+};
 class ResItem {
 public:
 	string filename;
@@ -17,7 +21,7 @@ public:
 		buff = NULL;
 		size = 0;
 	};
-	~ResItem() {
+	virtual ~ResItem() {
 		size = 0;
 		if (buff != NULL)
 		{
@@ -26,6 +30,7 @@ public:
 			cout << "Res delete:" <<filename<< endl;
 		}
 	};
+	virtual bool Init() { return true; };
 };
 typedef  shared_ptr<ResItem> ResPtr;
 
@@ -46,6 +51,12 @@ public:
 	bool GetBigRes(string name, std::function<void(ResPtr) > cb);
 
 	bool SaveRes(string name, ResPtr res);
+
+
+public:
+	int default_shader;
+	int GetDefaultShader() { return default_shader; };
+
 };
 #endif
 

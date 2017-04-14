@@ -74,7 +74,8 @@ public:
 		pbuf->pubseekpos(0, ios::in);
 
 		// 分配内存空间  
-		buffer = new char[size];
+		buffer = new char[size+1];
+		buffer[size] = 0;
 
 		// 获取文件内容  
 		pbuf->sgetn(buffer, size);

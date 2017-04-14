@@ -1,4 +1,4 @@
-#include <CompCamera.hpp>
+#include <CompCamera.h>
 #include <CompMeshRender.hpp>
 #include <Logic.h>
 #include <App.h>
@@ -20,18 +20,19 @@ bool Logic::Init()
 	SceneObject *obj = new SceneObject();
 	obj->position.x = 0;
 	obj->tag = 2;
-	CompCamera * camera = new CompCamera();
+	CompCameraPtr camera = make_shared<CompCamera>() ;
 	camera->SetName("main_camera");
 	camera->SetViewPort(500, 500);
 	camera->camera.slide(0, 0, 30);
 	obj->AddComponent(camera);
 
-	CompMeshRender *comp_mesh = new CompMeshRender();
+	CompMeshRenderPtr comp_mesh = make_shared<CompMeshRender>(); 
+	comp_mesh->SetTag(2);
 	comp_mesh->Init("box.fbx");
 	obj->AddComponent(comp_mesh);
 	app->scene.AddObject(app->scene.getRoot(), obj);
 
-	for (int i = 0; i < 10;i++)
+	for (int i = 0; i < 0;i++)
 	{
 
 		obj = new SceneObject();
@@ -45,7 +46,7 @@ bool Logic::Init()
 		obj->scale.z = 0.1 * i;
 		obj->scale.y = 0.1 * i;
 
-		comp_mesh = new CompMeshRender();
+		comp_mesh = make_shared<CompMeshRender>();
 		comp_mesh->SetTag(1);
 		comp_mesh->Init("box.fbx");
 
@@ -71,7 +72,7 @@ void Logic::Do(Uint32 delta)
 {
 	App *app = App::Instance();
 	SceneObject * obj=app->scene.FindObject(2);
-	CompCamera * camera = (CompCamera *)obj->GetComponent("main_camera");
+	CompCameraPtr  camera = dynamic_pointer_cast<CompCamera>(  obj->GetComponent("main_camera") );
 	static Vector2i lastPos;
 	int dx, dy;
 	SDL_Event e;
@@ -108,6 +109,9 @@ void Logic::Do(Uint32 delta)
 			break;
 			case SDLK_b:
 				this->res = nullptr;
+				break;
+			case SDLK_c:
+				obj->RemoveComponent(2);
 				break;
 			default:
 				break;

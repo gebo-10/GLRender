@@ -1,12 +1,15 @@
 #include <Material.h>
+#include <App.h>
 Material::Material(){
 
 }
 Material::~Material(){
 
 }
-bool Material::InitShader(GLchar *vShaderFile, GLchar *fShaderFile){
-	shader.buildShader(vShaderFile, fShaderFile);
+bool Material::InitShader(string filename){
+	App::Instance()->resource.GetRes(filename, [=](ResPtr res) {
+		shader = dynamic_pointer_cast<Shader>(res);
+	});
 	return true;
 }
 bool Material::RegTexture(char * file){
@@ -18,8 +21,8 @@ bool Material::Bind(){
 	for (int i = 0; i < tex.size(); i++){
 		char name[64] = { 0 };
 		sprintf(name, "tex%d", i);
-		tex[i]->bind(shader.id, i, name);
+		tex[i]->bind(shader->id, i, name);
 	}
-	glUseProgram(shader.id);
+	glUseProgram(shader->id);
 	return true;
 }

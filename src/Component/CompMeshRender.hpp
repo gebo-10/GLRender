@@ -1,6 +1,7 @@
 #ifndef _COMP_MESH_RENDER_HPP
 #define _COMP_MESH_RENDER_HPP
 #pragma once
+#include <Base.hpp>
 #include <Component.h>
 #include <Mesh.h>
 #include <Material.h>
@@ -23,6 +24,8 @@ public:
 	void OnMsg(int type);
 };
 
+typedef shared_ptr<CompMeshRender> CompMeshRenderPtr;
+
 CompMeshRender::CompMeshRender()
 {
 	meshs.clear();
@@ -30,13 +33,13 @@ CompMeshRender::CompMeshRender()
 
 CompMeshRender::~CompMeshRender()
 {
-
+	LOG(INFO) << "CompMeshRender delete" ;
 }
 
 void CompMeshRender::Init(char *filename)
 {
 	model.Import(filename);
-	material.InitShader("vert.txt", "frag.txt");
+	material.InitShader("normal.shader");
 	material.RegTexture("f.jpg");
 
 	for (int i = 0; i < model.scene->mNumMeshes;i++)

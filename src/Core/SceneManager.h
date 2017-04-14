@@ -1,6 +1,6 @@
 #ifndef _SCENE_MANAGER_HPP
 #define _SCENE_MANAGER_HPP
-#include<Common.hpp>
+#include<Common.h>
 #include<SceneObject.h>
 #include<Camera.h>
 #include<vector>

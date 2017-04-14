@@ -16,10 +16,10 @@ SceneObject::SceneObject()
 
 SceneObject::~SceneObject()
 {
-	for (Uint32 i = 0; i < comps.size(); i++)
-	{
-		delete comps[i];
-	}
+	//for (Uint32 i = 0; i < comps.size(); i++)
+	//{
+	//	delete comps[i];
+	//}
 	comps.clear();
 }
 
@@ -71,13 +71,13 @@ void SceneObject::UpdateTransform()
 }
 
 
-void SceneObject::AddComponent(Component *comp)
+void SceneObject::AddComponent(CompPtr comp)
 {
 	comp->SetBelong(this);
 	comps.push_back(comp);
 }
 
-Component * SceneObject::GetComponent(int tag)
+CompPtr SceneObject::GetComponent(int tag)
 {
 	for (Uint32 i = 0; i < comps.size(); i++)
 	{
@@ -89,7 +89,7 @@ Component * SceneObject::GetComponent(int tag)
 	return NULL;
 }
 
-Component * SceneObject::GetComponent(string name)
+CompPtr SceneObject::GetComponent(string name)
 {
 	for (Uint32 i = 0; i < comps.size(); i++)
 	{
@@ -99,4 +99,21 @@ Component * SceneObject::GetComponent(string name)
 		}
 	}
 	return NULL;
+}
+
+int SceneObject::RemoveComponent(int tag)
+{
+	int i = 0;
+	for (auto itr=comps.begin();itr!=comps.end();)
+	{
+		if ( (*itr)->tag==tag)
+		{
+			itr=comps.erase(itr);
+			i++;
+		}
+		else {
+			itr++;
+		}
+	}
+	return i;
 }

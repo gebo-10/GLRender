@@ -1,4 +1,6 @@
 #include <ResourceManager.h>
+#include <Shader.h>
+
 ResourceManager::ResourceManager()
 {
 
@@ -49,10 +51,23 @@ bool ResourceManager::GetRes(string name, std::function<void(ResPtr) > cb)
 	else
 	{
 		file.OpenFile(res_root + name, [=](FileWork * work) {
-			ResItem * item = new ResItem;
+			ResItem * item;
+			
+			if (name.find(".shader") != string::npos)
+			{
+				item = new Shader;
+			}
+			else
+			{
+				item = new ResItem;
+			}
+
+
 			item->buff = work->buff;
 			item->size = work->size;
 			item->filename = name;
+
+			item->Init();
 
 			ResPtr ptr(item, [=](ResItem * res) {
 				cout << "Res decache:" << res->filename << endl;

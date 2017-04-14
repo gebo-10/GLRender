@@ -29,7 +29,7 @@ public:
 
 	void RenderFrame();
 
-	int CatchError();
+	
 
 public:
 
@@ -37,5 +37,9 @@ public:
 	bool AddToCommandList(RenderCommand *cmd);
 	bool ClearCommandList();
 	bool FreshCommandList();
+
+public:
+	void ShowDeviceInfo();
+	int CatchError();
 };
 #endif

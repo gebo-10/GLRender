@@ -1,6 +1,6 @@
 #ifndef _SCENEOBJECT_HPP
 #define _SCENEOBJECT_HPP
-#include<Common.hpp>
+#include<Common.h>
 #include<Component.h>
 #include<string>
 
@@ -28,7 +28,7 @@ public:
 	SceneObject* parent;
 	std::vector<SceneObject *> children;
 
-	std::vector<Component *> comps;
+	std::vector<CompPtr> comps;
 public:
 	SceneObject();
 	~SceneObject();
@@ -43,9 +43,10 @@ public:
 
 	void UpdateTransform();
 
-	void AddComponent(Component *comp);
-	Component * GetComponent(int tag);
-	Component * GetComponent(string name);
+	void AddComponent(CompPtr comp);
+	CompPtr GetComponent(int tag);
+	CompPtr GetComponent(string name);
+	int RemoveComponent(int tag);
 public:
 	EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 

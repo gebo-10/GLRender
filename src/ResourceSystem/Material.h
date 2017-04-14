@@ -2,18 +2,18 @@
 #define _METARIAL_HPP
 #pragma once
 #include <vector>
-#include <ShaderProgram.hpp>
+#include <Shader.h>
 #include <Texture.h>
 class Material
 {
 public:
 	vector<Texture *> tex;
-	ShaderProgram shader;
+	shared_ptr<Shader> shader;
 public:
 	Material();
 	~Material();
 	bool RegTexture(char * file);
-	bool InitShader(GLchar *vShaderFile, GLchar *fShaderFile);
+	bool InitShader(string filename);
 	bool Bind(void);
 };
 #endif

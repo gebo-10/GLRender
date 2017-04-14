@@ -22,5 +22,5 @@ public:
 
 	void SetBelong(SceneObject * obj){ this->obj = obj; };
 };
-
+typedef shared_ptr<Component> CompPtr;
 #endif

@@ -1,7 +1,7 @@
 #ifndef _RENDERCOMMAND_HPP
 #define _RENDERCOMMAND_HPP
 #pragma once
-#include<Common.hpp>
+#include<Common.h>
 #include <Mesh.h>
 #include <Material.h>
 #include <kazmath.h>

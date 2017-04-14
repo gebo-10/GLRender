@@ -13,6 +13,8 @@ RenderEngine::~RenderEngine()
 bool RenderEngine::Init(char * name,int width,int height)
 {
 	int win_width = width, win_height = height;
+
+
 	// 1. initialize SDL
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
 	{
@@ -35,6 +37,8 @@ bool RenderEngine::Init(char * name,int width,int height)
 	glcontext = SDL_GL_CreateContext(pWindow);
 	pRenderer = SDL_CreateRenderer(pWindow, -1, 0);
 	glewInit();
+
+	ShowDeviceInfo();
 
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 4);
@@ -145,4 +149,21 @@ bool RenderEngine::FreshCommandList()
 	return true;
 }
 
+void RenderEngine::ShowDeviceInfo()
+{
+	//1、查看GLSL和OpenGL的版本
+	const GLubyte *renderer = glGetString(GL_RENDERER);
+	const GLubyte *vendor = glGetString(GL_VENDOR);
+	const GLubyte *version = glGetString(GL_VERSION);
+	const GLubyte *glslVersion =
+	glGetString(GL_SHADING_LANGUAGE_VERSION);
+	GLint major, minor;
+	glGetIntegerv(GL_MAJOR_VERSION, &major);
+	glGetIntegerv(GL_MINOR_VERSION, &minor);
+	cout << "GL Vendor    :" << vendor << endl;
+	cout << "GL Renderer  : " << renderer << endl;
+	cout << "GL Version (string)  : " << version << endl;
+	cout << "GL Version (integer) : " << major << "." << minor << endl;
+	cout << "GLSL Version : " << glslVersion << endl;
+}
 
