@@ -23,11 +23,18 @@ void ResourceManager::Update(Uint32 delta)
 
 bool ResourceManager::Cache(string filename, ResPtr res)
 {
+	weak_ptr<ResItem> wptr(res);
+	this->cache[filename] = wptr;
 	return true;
 }
 
 bool ResourceManager::DeCache(string filename)
 {
+	auto itr = cache.find(filename);
+	if (itr != cache.end())
+	{
+		this->cache.erase(itr);
+	}
 	return true;
 }
 
@@ -54,9 +61,7 @@ bool ResourceManager::GetRes(string name, std::function<void(ResPtr) > cb)
 			});//make_shared 不支持删除器 无法优化内存分配
 			
 			cb(ptr);
-			weak_ptr<ResItem> wptr(ptr);
-			this->cache[name] = wptr;
-			//this->cache.insert({ name, wptr });
+			this->Cache(name, ptr);
 		});
 	}
 

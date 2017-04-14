@@ -99,8 +99,16 @@ void Logic::Do(Uint32 delta)
 					SceneObject * obj = app->scene.FindObject(100 + i);
 					obj->rotate.x--;
 				}
-				
 			break;
+			case SDLK_a:
+				app->resource.GetRes("frag.txt", [this](ResPtr res) {
+					this->res = res;
+					cout.write((char *)res->buff, res->size);
+				});
+			break;
+			case SDLK_b:
+				this->res = nullptr;
+				break;
 			default:
 				break;
 			}
