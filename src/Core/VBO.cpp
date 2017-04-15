@@ -1,5 +1,5 @@
 #include <VBO.h>
-
+#include <App.h>
 VBO::VBO() :id(0), type(GL_ARRAY_BUFFER), buff_len(0), data_size(0), buff(0){}
 
 //data_size Îª×Ö½ÚÊý

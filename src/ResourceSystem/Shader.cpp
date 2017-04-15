@@ -3,7 +3,6 @@
 #include <App.h>
 Shader::Shader()
 {
-	id = App::Instance()->resource.GetDefaultShader();
 	vertex_shader = 0; 
 	frag_shader = 0;
 }
@@ -23,6 +22,8 @@ bool Shader::Init()
 	this->BuildFragShader(p);
 
 	this->BuildProgram();
+	delete buff;
+	buff = NULL;
 	return true;
 }
 

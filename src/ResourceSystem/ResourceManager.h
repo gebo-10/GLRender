@@ -3,36 +3,14 @@
 #pragma once
 #include<Base.hpp>
 #include <FileSystem.h>
+#include <Shader.h>
+#include <Texture.h>
+#include <ResItem.h>
 //2.引用计数 资源缓存 与释放
 //3.资源回调
 //4 资源预取技术 能不能 改变回调 
 //6 内存malloc free 优化
-enum ResType
-{
-	NORMAL,
-	SHADER,
-};
-class ResItem {
-public:
-	string filename;
-	void * buff;
-	Uint32 size;
-	ResItem() {
-		buff = NULL;
-		size = 0;
-	};
-	virtual ~ResItem() {
-		size = 0;
-		if (buff != NULL)
-		{
-			delete buff;
-			buff = NULL;
-			cout << "Res delete:" <<filename<< endl;
-		}
-	};
-	virtual bool Init() { return true; };
-};
-typedef  shared_ptr<ResItem> ResPtr;
+
 
 class ResourceManager {
 public:
@@ -54,8 +32,11 @@ public:
 
 
 public:
-	int default_shader;
-	int GetDefaultShader() { return default_shader; };
+	ShaderPtr default_shader;
+	ShaderPtr GetDefaultShader() { return default_shader; };
+	
+	TexturePtr default_texure;
+	TexturePtr GetDefaultTexure() { return default_texure; };
 
 };
 #endif

@@ -4,16 +4,19 @@
 #include <vector>
 #include <Shader.h>
 #include <Texture.h>
-class Material
+#include <ResourceManager.h>
+class Material :public ResItem
 {
 public:
-	vector<Texture *> tex;
-	shared_ptr<Shader> shader;
+	vector<TexturePtr> tex;
+	ShaderPtr shader;
 public:
 	Material();
 	~Material();
-	bool RegTexture(char * file);
+	bool Init();
+	bool RegTexture(string filename);
 	bool InitShader(string filename);
 	bool Bind(void);
 };
+typedef shared_ptr<Material> MaterialPtr;
 #endif

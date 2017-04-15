@@ -72,7 +72,7 @@ void Logic::Do(Uint32 delta)
 {
 	App *app = App::Instance();
 	SceneObject * obj=app->scene.FindObject(2);
-	CompCameraPtr  camera = dynamic_pointer_cast<CompCamera>(  obj->GetComponent("main_camera") );
+	CompCameraPtr  camera = static_pointer_cast<CompCamera>(  obj->GetComponent("main_camera") );
 	static Vector2i lastPos;
 	int dx, dy;
 	SDL_Event e;

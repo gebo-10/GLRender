@@ -1,4 +1,5 @@
 #include <VAO.h>
+#include <App.h>
 VAO::VAO() :id(0){ vbos.clear(); }
 VAO::~VAO(){}
 
@@ -27,4 +28,5 @@ bool VAO::UpdateData(int index, int data_size, void *buff)
 {
 	Bind();
 	return vbos[index].UpdateDate(data_size,buff);
+
 }

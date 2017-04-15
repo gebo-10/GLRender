@@ -19,6 +19,7 @@ class RenderCommand
 {
 public:
 	int type;
+	int status; //已经创建 已经初始化 已经销毁
 	RenderCommand() :type(EMPTY){};
 	RenderCommand(int type) :type(type){};
 	~RenderCommand(){};
@@ -27,19 +28,22 @@ public:
 	virtual void Before();
 	virtual void Deal(RenderEngine * render);
 	virtual void After();
+
+	void ChangeStatus(int status) { this->status = status; };
+	bool CmdInited() { return status == OBJ_INITED; }
 };
 class RcmdMesh:public RenderCommand
 {
 public:
 	Mesh		*mesh;
-	Material	*material;
+	MaterialPtr	material;
 	kmMat4 *transform;
 
 public:
 	RcmdMesh() :RenderCommand(DRAW_MESH){ };
 	~RcmdMesh(){};
 
-	void Init(Mesh *mesh, Material *material);
+	void Init(Mesh *mesh, MaterialPtr material);
 	void Deal(RenderEngine * render);
 
 };
@@ -47,7 +51,7 @@ public:
 class RcmdLine :public RenderCommand
 {
 public:
-	Material	*material;
+	MaterialPtr material;
 	vector <kmVec3> vertex;
 	Color		color;
 

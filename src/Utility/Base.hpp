@@ -25,6 +25,12 @@ struct Color
 	char b;
 	char a;
 };
+enum ObjStatus
+{
+	OBJ_CREATED,
+	OBJ_INITED,
+	OBJ_DELETED,
+};
 using   namespace   std;
 
 #endif

@@ -27,12 +27,14 @@ bool App::Init(char * name, int width, int height)
 	log.Init(name);
 	db.Init("game.db");
 
+	render.Init(name, width, height);
+
 	resource.Init("Assets/");
 	resource.GetRes("frag.txt", [](ResPtr res) {
 		cout.write((char *)res->buff, res->size);
 	});
 
-	render.Init(name, width, height);
+	
 	scene.Init();
 
 	logic.Init();

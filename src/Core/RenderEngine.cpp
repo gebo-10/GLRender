@@ -51,7 +51,7 @@ bool RenderEngine::Init(char * name,int width,int height)
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	vao.Init();
-	char memery[1024*1] = { 0 };
+	char memery[1024*100*5] = { 0 };
 	vao.NewVBO(sizeof(memery), (void *)&memery);
 	vao.NewVBO(sizeof(memery), (void *)&memery);
 	vao.NewVBO(sizeof(memery), (void *)&memery, GL_ELEMENT_ARRAY_BUFFER);

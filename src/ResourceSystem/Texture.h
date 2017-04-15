@@ -4,19 +4,19 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
 #include <GL/glew.h>
-class Texture
+
+#include <ResItem.h>
+class Texture:public ResItem
 {
 public:
 	SDL_Surface * img;
 	GLuint tex_id ;
-	
-
-
 public:
-	Texture(char * file);
+	Texture();
 	~Texture();
-	void init(char * file);
-	void bind(int shader, int texture_index, char * name);
+	bool Init();
+	bool Init(string filename);
+	void Bind(int shader, int texture_index, char * name);
 };
-
+typedef shared_ptr< Texture> TexturePtr;
 #endif

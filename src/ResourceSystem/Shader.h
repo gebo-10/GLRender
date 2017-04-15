@@ -3,7 +3,7 @@
 #pragma once
 #include <Base.hpp>
 #include<GL/glew.h>
-#include <ResourceManager.h>
+#include <ResItem.h>
 class Shader:public ResItem
 {
 public:
@@ -21,5 +21,5 @@ public:
 	bool BuildProgram();
 
 };
-
+typedef shared_ptr<Shader> ShaderPtr;
 #endif

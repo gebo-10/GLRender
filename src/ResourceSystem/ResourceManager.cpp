@@ -1,6 +1,7 @@
 #include <ResourceManager.h>
 #include <Shader.h>
-
+#include <Material.h>
+#include <Texture.h>
 ResourceManager::ResourceManager()
 {
 
@@ -14,7 +15,24 @@ ResourceManager::~ResourceManager()
 bool ResourceManager::Init(string root)
 {
 	res_root = root;
-	return file.Init();
+
+	file.Init();
+
+	ShaderPtr d_shader = make_shared<Shader>();
+
+
+	string vert_file = root + "vert.txt";
+	d_shader->BuildVertexShader(file.ReadTextFileSync(vert_file.c_str()) );
+
+	string frag_file = root + "frag.txt";
+	d_shader->BuildFragShader(file.ReadTextFileSync(frag_file.c_str()));
+
+	d_shader->BuildProgram();
+	default_shader = d_shader;
+
+	TexturePtr d_texure= make_shared<Texture>();
+	d_texure->Init(root+"Texure/pure.png");
+	return true;
 
 }
 
@@ -56,6 +74,14 @@ bool ResourceManager::GetRes(string name, std::function<void(ResPtr) > cb)
 			if (name.find(".shader") != string::npos)
 			{
 				item = new Shader;
+			}
+			else if (name.find(".png") != string::npos)
+			{
+				item = new Texture;
+			}
+			else if (name.find(".mtl") != string::npos)
+			{
+				item = new Material;
 			}
 			else
 			{

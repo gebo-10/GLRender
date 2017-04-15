@@ -11,7 +11,7 @@ class CompMeshRender :public Component
 {
 public:
 	Model model;
-	Material material;
+	MaterialPtr material;
 	vector<Mesh> meshs;
 
 	RcmdMesh cmd;
@@ -39,9 +39,7 @@ CompMeshRender::~CompMeshRender()
 void CompMeshRender::Init(char *filename)
 {
 	model.Import(filename);
-	material.InitShader("normal.shader");
-	material.RegTexture("f.jpg");
-
+	
 	for (int i = 0; i < model.scene->mNumMeshes;i++)
 	{
 		Mesh new_mesh;
@@ -49,15 +47,26 @@ void CompMeshRender::Init(char *filename)
 		meshs.push_back(new_mesh);
 	}
 
-	cmd.Init(&meshs[0], &material);
+	App::Instance()->resource.GetRes("first.mtl",[=](ResPtr res) {
+		material = static_pointer_cast<Material>(res);
+		cmd.Init(&meshs[0], material);
+	});
+	
+	
+	
 }
 
 void CompMeshRender::Update(Uint32 delta)
 {
+	if (!cmd.CmdInited() || material->shader==nullptr )
+	{
+		return;
+	}
+	
 	App *app=App::Instance();
 	cmd.transform = &obj->transform;
 	app->render.AddToCommandList(&cmd);
-	material.Bind();
+	material->Bind();
 }
 
 void CompMeshRender::OnMsg(int type)
