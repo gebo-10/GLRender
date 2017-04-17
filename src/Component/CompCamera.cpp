@@ -16,7 +16,7 @@ CompCamera::~CompCamera()
 void CompCamera::Init(const Vector3d& pos, const Vector3d& target, const Vector3d& up)
 {
 	camera.Init(pos, target, up);
-	int num = 40;
+	int num = 40 ;
 	int cell = 2;
 	int half = (num-1)*cell / 2;
 	vector<kmVec3> vertex;

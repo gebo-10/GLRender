@@ -7,7 +7,7 @@ int main(int argc, char* args[])
 {
 
 	App *app=App::Instance();
-	app->Init("test", 500, 500);
+	app->Init("test", 900, 900);
 	app->Start();
 	return 1;
 }

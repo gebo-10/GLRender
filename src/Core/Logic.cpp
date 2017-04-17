@@ -22,7 +22,7 @@ bool Logic::Init()
 	obj->tag = 2;
 	CompCameraPtr camera = make_shared<CompCamera>() ;
 	camera->SetName("main_camera");
-	camera->SetViewPort(500, 500);
+	camera->SetViewPort(900, 900);
 	camera->camera.slide(0, 0, 30);
 	obj->AddComponent(camera);
 
