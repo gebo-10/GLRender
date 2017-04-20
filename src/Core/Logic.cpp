@@ -22,13 +22,13 @@ bool Logic::Init()
 	obj->tag = 2;
 	CompCameraPtr camera = make_shared<CompCamera>() ;
 	camera->SetName("main_camera");
-	camera->SetViewPort(900, 900);
+	camera->SetViewPort(500, 500);
 	camera->camera.slide(0, 0, 30);
 	obj->AddComponent(camera);
 
 	CompMeshRenderPtr comp_mesh = make_shared<CompMeshRender>(); 
 	comp_mesh->SetTag(2);
-	comp_mesh->Init("box.fbx");
+	comp_mesh->Init("Assets/Model/box.fbx");
 	obj->AddComponent(comp_mesh);
 	app->scene.AddObject(app->scene.getRoot(), obj);
 
@@ -54,7 +54,6 @@ bool Logic::Init()
 		app->scene.AddObject(app->scene.getRoot(), obj);
 	}
 	
-
 	return true;
 }
 
@@ -64,6 +63,7 @@ void Logic::Update(Uint32 delta)
 	if (sum_delta >= interval)
 	{
 		Do(sum_delta);
+		App::Instance()->script.Update();
 		sum_delta = 0;
 	}
 }

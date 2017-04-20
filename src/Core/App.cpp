@@ -44,6 +44,8 @@ bool App::Init(char * name, int width, int height)
 bool App::Start()
 {
 	status = App::APP_RUN;
+
+	script.StartGameScript();
 	MainLoop();
 	return true;
 }

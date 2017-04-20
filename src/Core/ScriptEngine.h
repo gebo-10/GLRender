@@ -17,8 +17,10 @@ public:
 	~ScriptEngine();
 
 	bool Init();
+	void CheckError(int result);
 	bool StartGameScript();
 	void Update();
 	void StopGameScript();
+	void CallGlobalFun(const char *func, const char *sig, ...);
 };
 #endif
