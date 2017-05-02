@@ -4,7 +4,6 @@ Component::Component()
 {
 	tag=0;
 	name="";
-	obj = NULL;
 }
 
 Component::~Component()

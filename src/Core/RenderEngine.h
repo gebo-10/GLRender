@@ -31,9 +31,14 @@ public:
 
 	
 
+	void RenderShadowMesh();
 public:
 
 	std::vector<RenderCommand * > command_list;
+
+	std::vector<RenderCommand * > light_list;
+	std::vector<RenderCommand * > shadow_mesh_list; 
+
 	bool AddToCommandList(RenderCommand *cmd);
 	bool ClearCommandList();
 	bool FreshCommandList();

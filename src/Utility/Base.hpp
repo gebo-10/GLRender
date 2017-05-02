@@ -18,6 +18,7 @@
 #include <glog/logging.h>
 #include <glog/raw_logging.h>
 #include <kazmath.h>
+#include <GCObject.h>
 struct Color
 {
 	char r;
@@ -31,6 +32,9 @@ enum ObjStatus
 	OBJ_INITED,
 	OBJ_DELETED,
 };
+typedef kmVec2 vec2;
+typedef kmVec3 vec3;
+typedef kmVec4 vec4;
 using   namespace   std;
 
 #endif

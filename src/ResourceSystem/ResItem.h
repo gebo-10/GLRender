@@ -7,7 +7,8 @@ enum ResType
 	NORMAL,
 	SHADER,
 };
-class ResItem {
+class ResItem : public GCObject
+{
 public:
 	string filename;
 	void * buff;
@@ -27,6 +28,6 @@ public:
 	};
 	virtual bool Init() { return true; };
 };
-typedef  shared_ptr<ResItem> ResPtr;
+typedef  std::shared_ptr<ResItem> ResPtr;
 
 #endif

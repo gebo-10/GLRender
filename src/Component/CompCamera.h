@@ -1,5 +1,5 @@
-#ifndef _COMP_CAMERA_HPP
-#define _COMP_CAMERA_HPP
+#ifndef _COMP_CAMERA_H
+#define _COMP_CAMERA_H
 #pragma once
 #include <Component.h>
 #include <Camera.h>

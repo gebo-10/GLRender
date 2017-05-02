@@ -54,6 +54,7 @@ bool RenderEngine::Init(char * name,int width,int height)
 	char memery[1024*100*5] = { 0 };
 	vao.NewVBO(sizeof(memery), (void *)&memery);
 	vao.NewVBO(sizeof(memery), (void *)&memery);
+	vao.NewVBO(sizeof(memery), (void *)&memery);
 	vao.NewVBO(sizeof(memery), (void *)&memery, GL_ELEMENT_ARRAY_BUFFER);
 	CatchError();
 	return true;
@@ -84,6 +85,12 @@ void RenderEngine::RenderFrame()
 	OnRenderBegin();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	for (int i = 0; i < light_list.size(); i++) //生成shadow map
+	{
+		RenderCommand * cmd = light_list[i];
+		cmd->Do(this);
+	}
+
 	for (int i = 0; i < command_list.size();i++)
 	{
 		RenderCommand * cmd = command_list[i];
@@ -94,6 +101,14 @@ void RenderEngine::RenderFrame()
 	OnRenderEnd();
 }
 
+void RenderEngine::RenderShadowMesh()
+{
+	for (int i = 0; i < shadow_mesh_list.size(); i++) //生成shadow map
+	{
+		RenderCommand * cmd = shadow_mesh_list[i];
+		cmd->Do(this);
+	}
+}
 
 int  RenderEngine::CatchError()
 {
@@ -134,7 +149,23 @@ int  RenderEngine::CatchError()
 
 bool RenderEngine::AddToCommandList(RenderCommand * cmd)
 {
-	command_list.push_back(cmd);
+	if (cmd->type == RCMD_LIGHT)
+	{
+		light_list.push_back(cmd);
+	}
+	else
+	{
+		if (cmd->type == RCMD_DRAW_MESH)
+		{
+			RcmdMesh * cmd_mesh = (RcmdMesh *)cmd;
+			if (cmd_mesh->shadow_type > 0)
+			{
+				shadow_mesh_list.push_back(cmd);
+			}
+		}
+		command_list.push_back(cmd);
+	}
+
 	return true;
 }
 

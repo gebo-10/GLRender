@@ -18,7 +18,7 @@ public:
 
 	CompMeshRender();
 	~CompMeshRender();
-	void Init(char *filename);
+	void Init(char *filename, char * mtl);
 	void Update(Uint32 delta);
 
 	void OnMsg(int type);
@@ -36,7 +36,7 @@ CompMeshRender::~CompMeshRender()
 	LOG(INFO) << "CompMeshRender delete" ;
 }
 
-void CompMeshRender::Init(char *filename)
+void CompMeshRender::Init(char *filename,char * mtl)
 {
 	model.Import(filename);
 	
@@ -47,7 +47,7 @@ void CompMeshRender::Init(char *filename)
 		meshs.push_back(new_mesh);
 	}
 
-	App::Instance()->resource.GetRes("first.mtl",[=](ResPtr res) {
+	App::Instance()->resource.GetRes(mtl,[=](ResPtr res) {
 		material = static_pointer_cast<Material>(res);
 		cmd.Init(&meshs[0], material);
 	});

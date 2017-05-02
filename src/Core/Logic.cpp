@@ -28,8 +28,25 @@ bool Logic::Init()
 
 	CompMeshRenderPtr comp_mesh = make_shared<CompMeshRender>(); 
 	comp_mesh->SetTag(2);
-	comp_mesh->Init("Assets/Model/box.fbx");
+	comp_mesh->Init("Assets/Model/box.fbx","first.mtl");
 	obj->AddComponent(comp_mesh);
+	obj->scale.x = 0.20;
+	obj->scale.y = 0.20;
+	obj->scale.z = 0.20;
+	obj->position.z = 3;
+	obj->rotate.x = 45;
+	app->scene.AddObject(app->scene.getRoot(), obj);
+
+	obj = new SceneObject();
+	CompMeshRenderPtr comp_mesh2 = make_shared<CompMeshRender>();
+	comp_mesh2->SetTag(3);
+	comp_mesh2->Init("Assets/Model/plane.fbx", "second.mtl");
+	obj->AddComponent(comp_mesh2);
+	obj->scale.x = 10;
+	obj->scale.y = 10;
+	obj->scale.z = 10;
+	obj->position.z = 0;
+	obj->rotate.x = 0;
 	app->scene.AddObject(app->scene.getRoot(), obj);
 
 	for (int i = 0; i < 0;i++)
@@ -48,7 +65,7 @@ bool Logic::Init()
 
 		comp_mesh = make_shared<CompMeshRender>();
 		comp_mesh->SetTag(1);
-		comp_mesh->Init("box.fbx");
+		comp_mesh->Init("box.fbx","second.mtl");
 
 		obj->AddComponent(comp_mesh);
 		app->scene.AddObject(app->scene.getRoot(), obj);

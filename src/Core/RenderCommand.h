@@ -9,10 +9,11 @@ class RenderEngine;
 
 enum CommandType
 {
-	EMPTY,
-	BIND_VAO,
-	DRAW_MESH,
-	DRAW_LINES,
+	RCMD_EMPTY,
+	RCMD_BIND_VAO,
+	RCMD_DRAW_MESH,
+	RCMD_DRAW_LINES,
+	RCMD_LIGHT,
 };
 
 class RenderCommand
@@ -20,7 +21,7 @@ class RenderCommand
 public:
 	int type;
 	int status; //已经创建 已经初始化 已经销毁
-	RenderCommand() :type(EMPTY){};
+	RenderCommand() :type(RCMD_EMPTY){};
 	RenderCommand(int type) :type(type){};
 	~RenderCommand(){};
 
@@ -35,12 +36,13 @@ public:
 class RcmdMesh:public RenderCommand
 {
 public:
+	int		shadow_type;//0 表示没阴影， 1 表示硬阴影，  2 表示软阴影
 	Mesh		*mesh;
 	MaterialPtr	material;
 	kmMat4 *transform;
 
 public:
-	RcmdMesh() :RenderCommand(DRAW_MESH){ };
+	RcmdMesh() :RenderCommand(RCMD_DRAW_MESH){ };
 	~RcmdMesh(){};
 
 	void Init(Mesh *mesh, MaterialPtr material);
@@ -56,10 +58,28 @@ public:
 	Color		color;
 
 public:
-	RcmdLine() :RenderCommand(DRAW_LINES){ };
+	RcmdLine() :RenderCommand(RCMD_DRAW_LINES){ };
 	~RcmdLine(){};
 
 	void Init(vector <kmVec3> vertex, Color color);
+	void Deal(RenderEngine * render);
+
+};
+
+////////////////////////////////////////////////////////////////////////
+class RcmdShadowMap :public RenderCommand
+{
+public:
+	GLuint m_fbo;
+	GLuint m_shadowMap;
+
+	ShaderPtr shader;
+
+public:
+	RcmdShadowMap() :RenderCommand(RCMD_LIGHT) { };
+	~RcmdShadowMap() {};
+
+	void Init();
 	void Deal(RenderEngine * render);
 
 };

@@ -16,7 +16,8 @@ public:
 	~Texture();
 	bool Init();
 	bool Init(string filename);
-	void Bind(int shader, int texture_index, char * name);
+	void Bind(int shader, int texture_index, const char * name);
+	void SetParam(int target, int name, int param);
 };
 typedef shared_ptr< Texture> TexturePtr;
 #endif

@@ -70,12 +70,12 @@ bool ResourceManager::GetRes(string name, std::function<void(ResPtr) > cb)
 	{
 		file.OpenFile(res_root + name, [=](FileWork * work) {
 			ResItem * item;
-			
+
 			if (name.find(".shader") != string::npos)
 			{
 				item = new Shader;
 			}
-			else if (name.find(".png") != string::npos)
+			else if (name.find(".png") != string::npos || (name.find(".jpg") != string::npos) )
 			{
 				item = new Texture;
 			}

@@ -8,14 +8,13 @@
 class Material :public ResItem
 {
 public:
-	vector<TexturePtr> tex;
 	ShaderPtr shader;
+	std::vector< ShaderParam > param;
 public:
 	Material();
 	~Material();
 	bool Init();
-	bool RegTexture(string filename);
-	bool InitShader(string filename);
+	bool ParseParam(char * jsonstr);
 	bool Bind(void);
 };
 typedef shared_ptr<Material> MaterialPtr;

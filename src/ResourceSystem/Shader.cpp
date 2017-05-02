@@ -1,6 +1,8 @@
 #include <Shader.h>
 #include <ResourceManager.h>
 #include <App.h>
+#include <Json.h>
+
 Shader::Shader()
 {
 	vertex_shader = 0; 
@@ -15,7 +17,11 @@ Shader::~Shader()
 bool Shader::Init()
 {
 	char * p= (char*)buff;
-	p = strtok((char*)buff,"@");
+
+	p = strtok((char*)buff, "@");
+	this->ParseParam(p);
+
+	p = strtok(NULL,"@");
 	this->BuildVertexShader(p);
 	
 	p = strtok(NULL, "@");
@@ -24,6 +30,70 @@ bool Shader::Init()
 	this->BuildProgram();
 	delete buff;
 	buff = NULL;
+	return true;
+}
+
+bool Shader::ParseParam(char * jsonstr)
+{
+	param.clear();
+
+	using namespace rapidjson;
+	Document d;
+	d.Parse(jsonstr);
+
+	Value& param_list = d["param"];
+	for (int i = 0; i < param_list.Size(); i++)
+	{
+		Value & item = param_list[i];
+		ShaderParam param;
+		param.param_name = item[0].GetString();
+		param.editor_name = item[1].GetString();
+
+		string type = item[2].GetString();
+
+		/////////////////////////////////////////////////////////////////////////////
+		if (type == "texture")
+		{
+			param.type = SPT_TEXTURE;
+			param.value.ptr = App::Instance()->resource.GetDefaultTexure();
+			App::Instance()->resource.GetRes(item[3].GetString(), [=](ResPtr res) {
+				ShaderParam tmp = param;
+				tmp.value.ptr = res; //???动态转换 向下转换
+				this->param.push_back(tmp);
+			});
+			return true;
+		}
+		////////////////////////////////////////////////////////////////////////////////
+		if (type == "int")
+		{
+			param.type = SPT_INT;
+			param.value.i = item[3].GetInt();
+		}
+		else if (type == "float")
+		{
+			param.type = SPT_FLOAT;
+			param.value.f = item[3].GetFloat();
+		}
+		else if (type == "bool")
+		{
+			param.type = SPT_BOOL;
+			param.value.b = item[3].GetBool();
+		}
+		else if (type == "color")
+		{
+			param.type = SPT_COLOR;
+			param.value.color.r = item[3][0].GetFloat();
+			param.value.color.g = item[3][1].GetFloat();
+			param.value.color.b = item[3][2].GetFloat();
+			param.value.color.a = item[3][3].GetFloat();
+		}
+
+
+		this->param.push_back(param);
+
+	}
+
+
 	return true;
 }
 

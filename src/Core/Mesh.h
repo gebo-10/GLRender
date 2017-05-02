@@ -8,7 +8,7 @@ public:
 	vector<float> vertex;
 	vector<int> index;
 	vector<float> uv;
-
+	vector<float> normal;
 	
 	Mesh();
 	Mesh(aiMesh* paiMesh);
