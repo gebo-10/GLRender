@@ -1,5 +1,5 @@
-#ifndef _METARIAL_HPP
-#define _METARIAL_HPP
+#ifndef _METARIAL_H
+#define _METARIAL_H
 #pragma once
 #include <vector>
 #include <Shader.h>
@@ -13,7 +13,7 @@ public:
 public:
 	Material();
 	~Material();
-	bool Init();
+	bool LoadCallback();
 	bool ParseParam(char * jsonstr);
 	bool Bind(void);
 };

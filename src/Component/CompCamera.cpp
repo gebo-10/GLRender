@@ -42,16 +42,16 @@ void CompCamera::Init(const Vector3d& pos, const Vector3d& target, const Vector3
 	}
 	Color color = {255,255,255,255};
 	cmd_line.Init(vertex, color);
+
+	cmd_camera.Init(&camera);
 }
 
 void CompCamera::Update(Uint32 delta)
 {
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	camera.setModelViewMatrix();
-
 	App *app = App::Instance();
 
+
+	app->render.AddToCommandList(&cmd_camera);
 	app->render.AddToCommandList(&cmd_line);
 }
 
@@ -64,12 +64,7 @@ void CompCamera::SetViewPort(int width, int height)
 {
 	win_width = width;
 	win_height = height;
-	glViewport(0, 0, (GLint)win_width, (GLint)win_height);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluPerspective(45.0, (GLfloat)win_width / (GLfloat)win_height, 0.1, 1000.0);
-	glMatrixMode(GL_MODELVIEW);
-	//gluLookAt(0.0, 0.0, 12.0, 0.0, 0.0, 0, 0.0, 1.0, 0.0);
+	camera.SetViewPort(width, height);
 }
 
 void CompCamera::RotateX(float angle)

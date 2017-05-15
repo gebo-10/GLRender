@@ -1,5 +1,5 @@
-#ifndef _RENDERABLE_HPP
-#define _RENDERABLE_HPP
+#ifndef _RENDERABLE_H
+#define _RENDERABLE_H
 #pragma once
 #include<Base.hpp>
 class Renderable

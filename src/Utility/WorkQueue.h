@@ -47,11 +47,11 @@ public:
 	bool AddWork(Work * work) 
 	{
 		std::thread t([=]() {
-			process(work);
+			this->process(work);
 
-			lock.lock();
-			work_list.push_back(work);
-			lock.unlock();
+			this->lock.lock();
+			this->work_list.push_back(work);
+			this->lock.unlock();
 		});
 		t.join();
 		return true;

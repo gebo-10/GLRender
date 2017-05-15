@@ -1,5 +1,5 @@
-#ifndef _COMPONENT_HPP
-#define _COMPONENT_HPP
+#ifndef _COMPONENT_H
+#define _COMPONENT_H
 #include <Base.hpp>
 #include <SDL/SDL.h>
 class SceneObject;

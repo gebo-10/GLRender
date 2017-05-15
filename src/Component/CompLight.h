@@ -10,7 +10,7 @@ class CompLight :public Component
 public:
 	Light light;
 	
-	RcmdShadowMap rcmd;
+	RcmdLight rcmd;
 
 	CompLight();
 	~CompLight();

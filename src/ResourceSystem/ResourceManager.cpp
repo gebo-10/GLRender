@@ -18,20 +18,13 @@ bool ResourceManager::Init(string root)
 
 	file.Init();
 
-	ShaderPtr d_shader = make_shared<Shader>();
 
+	default_shader = static_pointer_cast<Shader>(GetResSync("System/default.shader"));
+	default_texure = static_pointer_cast<Texture>(GetResSync("System/default.png"));
+	default_material = static_pointer_cast<Material>(GetResSync("System/default.mtl"));
 
-	string vert_file = root + "vert.txt";
-	d_shader->BuildVertexShader(file.ReadTextFileSync(vert_file.c_str()) );
+	//ResPtr shader_common_header = GetResSync("System/shader_common");
 
-	string frag_file = root + "frag.txt";
-	d_shader->BuildFragShader(file.ReadTextFileSync(frag_file.c_str()));
-
-	d_shader->BuildProgram();
-	default_shader = d_shader;
-
-	TexturePtr d_texure= make_shared<Texture>();
-	d_texure->Init(root+"Texure/pure.png");
 	return true;
 
 }
@@ -65,48 +58,120 @@ bool ResourceManager::GetRes(string name, std::function<void(ResPtr) > cb)
 	{
 		ResPtr ptr = itr->second.lock();
 		cb(ptr);
+		return true;
 	}
-	else
+
+	int res_type = RT_NORMAL;
+	if (name.find(".shader") != string::npos)
 	{
-		file.OpenFile(res_root + name, [=](FileWork * work) {
-			ResItem * item;
-
-			if (name.find(".shader") != string::npos)
-			{
-				item = new Shader;
-			}
-			else if (name.find(".png") != string::npos || (name.find(".jpg") != string::npos) )
-			{
-				item = new Texture;
-			}
-			else if (name.find(".mtl") != string::npos)
-			{
-				item = new Material;
-			}
-			else
-			{
-				item = new ResItem;
-			}
-
-
-			item->buff = work->buff;
-			item->size = work->size;
-			item->filename = name;
-
-			item->Init();
-
-			ResPtr ptr(item, [=](ResItem * res) {
-				cout << "Res decache:" << res->filename << endl;
-				this->DeCache(res->filename);
-				delete res;
-			});//make_shared 不支持删除器 无法优化内存分配
-			
-			cb(ptr);
-			this->Cache(name, ptr);
-		});
+		res_type = RT_SHADER;
 	}
+	else if (name.find(".png") != string::npos || (name.find(".jpg") != string::npos))
+	{
+		res_type = RT_TEXTURE;
+	}
+	else if (name.find(".mtl") != string::npos)
+	{
+		res_type = RT_MATERIAL;
+	}
+
+
+	file.OpenFile(res_root + name, [=](FileWork * work) {
+		ResItem * item=NULL;
+
+		switch (res_type)
+		{
+		case RT_SHADER:
+			item = new Shader;
+			break;
+		case RT_TEXTURE:
+			item = new Texture;
+			break;
+		case RT_MATERIAL:
+			item = new Material;
+			break;
+		case RT_NORMAL:
+			item = new ResItem;
+			break;
+		default:
+			LOG(ERROR) << "Unknow res type"<<endl;
+			return false;
+			break;
+		}
+
+		item->buff = work->buff;
+		item->size = work->size;
+		item->filename = name;
+
+		item->LoadCallback();
+
+		ResPtr ptr(item, [=](ResItem * res) {
+			cout << "Res decache:" << res->filename << endl;
+			this->DeCache(res->filename);
+			delete res;
+		});//make_shared 不支持删除器 无法优化内存分配
+			
+		cb(ptr);
+		this->Cache(name, ptr);
+	});
 
 	return true;
+}
+
+ResPtr ResourceManager::GetResSync(string name)
+{
+	int res_type = RT_NORMAL;
+	if (name.find(".shader") != string::npos)
+	{
+		res_type = RT_SHADER;
+	}
+	else if (name.find(".png") != string::npos || (name.find(".jpg") != string::npos))
+	{
+		res_type = RT_TEXTURE;
+	}
+	else if (name.find(".mtl") != string::npos)
+	{
+		res_type = RT_MATERIAL;
+	}
+
+	
+	FileWork * work = file.OpenFileSync(res_root + name);
+	
+	ResItem * item=NULL;
+	switch (res_type)
+	{
+	case RT_SHADER:
+		item = new Shader;
+		break;
+	case RT_TEXTURE:
+		item = new Texture;
+		break;
+	case RT_MATERIAL:
+		item = new Material;
+		break;
+	case RT_NORMAL:
+		item = new ResItem;
+		break;
+	default:
+		LOG(ERROR) << "Unknow res type" << endl;
+		return false;
+		break;
+	}
+
+	item->buff = work->buff;
+	item->size = work->size;
+	item->filename = name;
+
+	item->LoadCallback();
+
+	ResPtr ptr(item, [=](ResItem * res) {
+		cout << "Res decache:" << res->filename << endl;
+		this->DeCache(res->filename);
+		delete res;
+	});//make_shared 不支持删除器 无法优化内存分配
+
+	this->Cache(name, ptr);
+	return ptr;
 }
 
 bool ResourceManager::GetBigRes(string name, std::function<void(ResPtr) > cb)

@@ -4,8 +4,10 @@
 #include<Base.hpp>
 enum ResType
 {
-	NORMAL,
-	SHADER,
+	RT_NORMAL,
+	RT_SHADER,
+	RT_TEXTURE,
+	RT_MATERIAL,
 };
 class ResItem : public GCObject
 {
@@ -26,7 +28,7 @@ public:
 		}
 		cout << "Res delete:" << filename << endl;
 	};
-	virtual bool Init() { return true; };
+	virtual bool LoadCallback() { return true; };
 };
 typedef  std::shared_ptr<ResItem> ResPtr;
 

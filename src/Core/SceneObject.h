@@ -1,5 +1,5 @@
-#ifndef _SCENEOBJECT_HPP
-#define _SCENEOBJECT_HPP
+#ifndef _SCENEOBJECT_H
+#define _SCENEOBJECT_H
 #include<Common.h>
 #include<Component.h>
 #include<string>

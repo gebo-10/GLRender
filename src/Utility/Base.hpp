@@ -1,5 +1,5 @@
-#ifndef _BASE_HPP
-#define _BASE_HPP
+#ifndef _BASE_H
+#define _BASE_H
 #pragma once
 
 // #ifdef GLRENDER_CORE_SOURCE		// Build dll
@@ -21,10 +21,10 @@
 #include <GCObject.h>
 struct Color
 {
-	char r;
-	char g;
-	char b;
-	char a;
+	unsigned char r;
+	unsigned char g;
+	unsigned char b;
+	unsigned char a;
 };
 enum ObjStatus
 {
@@ -35,6 +35,9 @@ enum ObjStatus
 typedef kmVec2 vec2;
 typedef kmVec3 vec3;
 typedef kmVec4 vec4;
+
+typedef kmMat4 mat4;
+
 using   namespace   std;
 
 #endif

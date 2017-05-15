@@ -1,5 +1,5 @@
-#ifndef _COMP_MESH_RENDER_HPP
-#define _COMP_MESH_RENDER_HPP
+#ifndef _COMP_MESH_RENDER_H
+#define _COMP_MESH_RENDER_H
 #pragma once
 #include <Base.hpp>
 #include <Component.h>
@@ -10,11 +10,16 @@
 class CompMeshRender :public Component
 {
 public:
+	struct MeshRenderItem
+	{
+		MaterialPtr material;
+		MeshPtr		mesh;
+	};
+public:
 	Model model;
-	MaterialPtr material;
-	vector<Mesh> meshs;
+	std::vector<MeshRenderItem> meshs;
 
-	RcmdMesh cmd;
+	std::vector<RenderCommandPtr> cmd_list;
 
 	CompMeshRender();
 	~CompMeshRender();
@@ -42,15 +47,30 @@ void CompMeshRender::Init(char *filename,char * mtl)
 	
 	for (int i = 0; i < model.scene->mNumMeshes;i++)
 	{
-		Mesh new_mesh;
-		new_mesh.Init(model.scene->mMeshes[i]);
-		meshs.push_back(new_mesh);
+		
+		MeshPtr new_mesh= std::make_shared<Mesh>();
+
+		new_mesh->Init(model.scene->mMeshes[i]);
+
+
+		App::Instance()->resource.GetRes(mtl, [=](ResPtr res) {
+			MeshRenderItem item;
+			item.material = static_pointer_cast<Material>(res);
+			item.mesh = new_mesh;
+			meshs.push_back(item);
+
+			RcmdGeometryPtr cmd_geo = std::make_shared<RcmdGeometry>();
+			cmd_geo->Init(new_mesh);
+
+			RcmdMaterialPtr cmd_mtl = std::make_shared<RcmdMaterial>();
+			cmd_mtl->Init(item.material);
+
+			cmd_list.push_back(cmd_mtl);
+			cmd_list.push_back(cmd_geo);
+		});
 	}
 
-	App::Instance()->resource.GetRes(mtl,[=](ResPtr res) {
-		material = static_pointer_cast<Material>(res);
-		cmd.Init(&meshs[0], material);
-	});
+	
 	
 	
 	
@@ -58,15 +78,19 @@ void CompMeshRender::Init(char *filename,char * mtl)
 
 void CompMeshRender::Update(Uint32 delta)
 {
-	if (!cmd.CmdInited() || material->shader==nullptr )
+
+	for (int i=0;i<cmd_list.size();i++)
 	{
-		return;
+		RenderCommandPtr cmd = cmd_list[i];
+		if (cmd->type== RCMD_GEOMETRY)
+		{
+			RcmdGeometryPtr cmd_geo = static_pointer_cast<RcmdGeometry>(cmd);
+			cmd_geo->transform = &obj->transform;
+		}
+		App::Instance()->render.AddToCommandList(cmd.get());
+
 	}
-	
-	App *app=App::Instance();
-	cmd.transform = &obj->transform;
-	app->render.AddToCommandList(&cmd);
-	material->Bind();
+
 }
 
 void CompMeshRender::OnMsg(int type)

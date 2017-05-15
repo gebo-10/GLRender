@@ -1,5 +1,5 @@
-#ifndef _DEVICE_HPP
-#define _DEVICE_HPP
+#ifndef _DEVICE_H
+#define _DEVICE_H
 #pragma once
 #include<Base.hpp>
 #include <SceneManager.hpp>

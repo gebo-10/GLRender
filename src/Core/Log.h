@@ -1,5 +1,5 @@
-#ifndef _LOG_HPP
-#define _LOG_HPP
+#ifndef _LOG_H
+#define _LOG_H
 #pragma once
 #include<Base.hpp>
 class Log{

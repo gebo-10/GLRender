@@ -1,5 +1,5 @@
-#ifndef _RENDERTARGET_HPP
-#define _RENDERTARGET_HPP
+#ifndef _RENDERTARGET_H
+#define _RENDERTARGET_H
 #pragma once
 #include<Base.hpp>
 class RenderTarget

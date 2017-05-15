@@ -1,9 +1,13 @@
 #include <CompCamera.h>
 #include <CompMeshRender.hpp>
+#include <CompLight.h>
 #include <Logic.h>
 #include <App.h>
+#include <math.h>
+#include <Font.h>
 Logic::Logic()
 {
+	update_count = 0;
 }
 
 Logic::~Logic()
@@ -22,11 +26,12 @@ bool Logic::Init()
 	obj->tag = 2;
 	CompCameraPtr camera = make_shared<CompCamera>() ;
 	camera->SetName("main_camera");
-	camera->SetViewPort(500, 500);
+	camera->SetViewPort(512, 512);
 	camera->camera.slide(0, 0, 30);
 	obj->AddComponent(camera);
 
 	CompMeshRenderPtr comp_mesh = make_shared<CompMeshRender>(); 
+	comp_mesh->SetName("box_render");
 	comp_mesh->SetTag(2);
 	comp_mesh->Init("Assets/Model/box.fbx","first.mtl");
 	obj->AddComponent(comp_mesh);
@@ -41,6 +46,8 @@ bool Logic::Init()
 	CompMeshRenderPtr comp_mesh2 = make_shared<CompMeshRender>();
 	comp_mesh2->SetTag(3);
 	comp_mesh2->Init("Assets/Model/plane.fbx", "second.mtl");
+
+
 	obj->AddComponent(comp_mesh2);
 	obj->scale.x = 10;
 	obj->scale.y = 10;
@@ -48,6 +55,53 @@ bool Logic::Init()
 	obj->position.z = 0;
 	obj->rotate.x = 0;
 	app->scene.AddObject(app->scene.getRoot(), obj);
+
+	obj = new SceneObject();
+	
+	obj->SetTag(121);
+
+
+	CompLightPtr comp_light = make_shared<CompLight>();
+	comp_light->SetName("light");
+	comp_light->SetTag(1);
+	comp_light->Init();
+	comp_light->light.SetPosTarget(vec3({ -10,0,10 }), vec3({ 0,0,0 }));
+	Color c;
+	c.r = 100;
+	c.g = 200;
+	c.b = 30;
+	c.a = 255;
+	comp_light->light.color = c;
+	comp_light->light.type = LT_Directional;
+
+	obj->AddComponent(comp_light);
+
+
+	CompLightPtr comp_light2 = make_shared<CompLight>();
+	comp_light2->SetName("light2");
+	comp_light2->SetTag(2);
+	comp_light2->Init();
+	comp_light2->light.SetPosTarget(vec3({ -10,0,10 }), vec3({ 0,0,0 }));
+	Color c2;
+	c2.r = 50;
+	c2.g = 0;
+	c2.b = 0;
+	c2.a = 255;
+	comp_light2->light.color = c2;
+	comp_light2->light.type = LT_Ambient;
+
+	obj->AddComponent(comp_light2);
+
+
+
+	obj->scale.x =1;
+	obj->scale.y = 1;
+	obj->scale.z = 1;
+	obj->position.z = 1;
+	obj->position.x =0;
+	obj->rotate.x = 0;
+	app->scene.AddObject(app->scene.getRoot(), obj);
+
 
 	for (int i = 0; i < 0;i++)
 	{
@@ -91,6 +145,7 @@ void Logic::Do(Uint32 delta)
 	SceneObject * obj=app->scene.FindObject(2);
 	CompCameraPtr  camera = static_pointer_cast<CompCamera>(  obj->GetComponent("main_camera") );
 	static Vector2i lastPos;
+
 	int dx, dy;
 	SDL_Event e;
 	int times = 3;//??? Õ¦Õû
@@ -130,8 +185,34 @@ void Logic::Do(Uint32 delta)
 			case SDLK_c:
 				obj->RemoveComponent(2);
 				break;
-			default:
+
+			case SDLK_d:
+			{
+					SceneObject * obj = app->scene.FindObject(121);
+					CompLightPtr  light_cnmp = static_pointer_cast<CompLight>(obj->GetComponent("light"));
+					
+					//double tmp = (double)update_count;
+					double deg = (double)(update_count % 360) / 360 * 3.1415926*2;
+					
+					
+					light_cnmp->light.SetPosTarget(vec3({ 50* (float) cos(deg),50 * (float)sin(deg),20 }), vec3({ 0,0,0 }));
 				break;
+			}
+			case SDLK_e:
+			{
+				Font font;
+				font.Init();
+				font.SetFont("xxx");
+				font.SetFontSize(36);
+				TexturePtr ptr = font.GetStrTexture("xx");
+				ShaderParamValue val;
+				val.ptr = ptr;
+
+				SceneObject *obj = app->scene.FindObject(2);
+				CompMeshRenderPtr comp22 = static_pointer_cast<CompMeshRender>(obj->GetComponent("box_render"));
+				comp22->meshs[0].material->param[0].value = val;
+				break;
+			}
 			}
 			break;
 		case SDL_MOUSEBUTTONDOWN:
@@ -174,6 +255,8 @@ void Logic::Do(Uint32 delta)
 	}
 	while (SDL_PollEvent(&e)){}
 
+
+	update_count++;
 	//SDL_PumpEvents();
 	//arg = (arg + 0.1);
 	//int tmpint = (int)arg;

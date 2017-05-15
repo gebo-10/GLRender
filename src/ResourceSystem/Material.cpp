@@ -1,9 +1,6 @@
 #include <Material.h>
 #include <App.h>
-
 #include <Json.h>
-
-
 
 Material::Material(){
 	shader=App::Instance()->resource.GetDefaultShader();
@@ -12,7 +9,7 @@ Material::~Material(){
 
 }
 
-bool Material::Init()
+bool Material::LoadCallback()
 {
 	using namespace rapidjson;
 	Document d;
@@ -91,7 +88,7 @@ bool Material::ParseParam(char * jsonstr)
 				tmp.value.ptr = res; //???动态转换 向下转换
 				this->param.push_back(tmp);
 			});
-			return true;
+			continue;
 		}
 		////////////////////////////////////////////////////////////////////////////////
 		if (type == "int")
@@ -118,11 +115,9 @@ bool Material::ParseParam(char * jsonstr)
 			param.value.color.a = item[3][3].GetFloat();
 		}
 		
-
 		this->param.push_back(param);
 
 	}
-
 
 	return true;
 }

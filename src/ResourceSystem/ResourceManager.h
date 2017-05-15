@@ -6,11 +6,14 @@
 #include <Shader.h>
 #include <Texture.h>
 #include <ResItem.h>
+
 //2.引用计数 资源缓存 与释放
 //3.资源回调
 //4 资源预取技术 能不能 改变回调 
 //6 内存malloc free 优化
 
+class Material;
+typedef std::shared_ptr<Material> MaterialPtr;
 
 class ResourceManager {
 public:
@@ -26,18 +29,24 @@ public:
 	bool DeCache(string filename) ;
 
 	bool GetRes(string name,std::function<void (ResPtr) > cb);
+	ResPtr GetResSync(string name);
+
 	bool GetBigRes(string name, std::function<void(ResPtr) > cb);
 
 	bool SaveRes(string name, ResPtr res);
 
 
 public:
+	string shader_common;
+
 	ShaderPtr default_shader;
 	ShaderPtr GetDefaultShader() { return default_shader; };
 	
 	TexturePtr default_texure;
 	TexturePtr GetDefaultTexure() { return default_texure; };
 
+	MaterialPtr default_material;
+	MaterialPtr GetDefaultMaterial() { return default_material; };
 };
 #endif
 

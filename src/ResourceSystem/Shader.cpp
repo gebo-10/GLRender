@@ -14,7 +14,7 @@ Shader::~Shader()
 	cout << "shader delete:"<<filename << endl;
 }
 
-bool Shader::Init()
+bool Shader::LoadCallback()
 {
 	char * p= (char*)buff;
 
@@ -61,7 +61,7 @@ bool Shader::ParseParam(char * jsonstr)
 				tmp.value.ptr = res; //???动态转换 向下转换
 				this->param.push_back(tmp);
 			});
-			return true;
+			continue;
 		}
 		////////////////////////////////////////////////////////////////////////////////
 		if (type == "int")
@@ -205,7 +205,19 @@ bool Shader::BuildProgram()
 	glAttachShader(program, vertex_shader);
 	glAttachShader(program, frag_shader);
 	//将这些对象链接成一个可执行程序
+	
 	glLinkProgram(program);
+
+
+	//在link 之后 
+	//绑定到全局uniform 到0节点
+	int block_index = glGetUniformBlockIndex(program, "Global");
+	glUniformBlockBinding(program, block_index, 0);
+
+	block_index = glGetUniformBlockIndex(program, "Light");
+	glUniformBlockBinding(program, block_index, 1);
+
+
 	//查询链接的结果
 	GLint linkStatus;
 	glGetProgramiv(program, GL_LINK_STATUS, &linkStatus);

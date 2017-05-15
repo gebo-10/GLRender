@@ -1,5 +1,5 @@
-#ifndef _COMMON_HPP
-#define _COMMON_HPP
+#ifndef _COMMON_H
+#define _COMMON_H
 #include <Eigen/Dense>
 #include<GL/glew.h>
 
@@ -16,5 +16,6 @@ using namespace Eigen;
 #pragma  comment(lib,"sqlite3.lib")
 #pragma  comment(lib,"kazmath.lib")
 #pragma  comment(lib,"libtcmalloc_minimal-debug.lib")//__tcmalloc  ∞—glog ’˚±¿¿£¡À
+#pragma  comment(lib,"freetype.lib")
 
 #endif

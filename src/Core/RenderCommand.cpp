@@ -196,3 +196,78 @@ void RcmdShadowMap::Deal(RenderEngine * render)
 	glActiveTexture(3);
 	glBindTexture(GL_TEXTURE_2D, m_shadowMap);
 }
+
+///////////////////////////////////////////////////////////////////
+void RcmdGeometry::Init(MeshPtr mesh)
+{
+	this->mesh = mesh;
+	ChangeStatus(OBJ_INITED);
+}
+
+void RcmdGeometry::Deal(RenderEngine * render)
+{
+	render->CatchError();
+
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();//±£´æÉãÏñ»ú¾ØÕó
+	glMultMatrixf((*transform).mat);//µ±Ç°ÊÓÍ¼¾ØÕó ½áºÏ Ó°Ïì±¾´ÎäÖÈ¾
+
+
+	render->SetUniform(transform);
+
+	render->vao.UpdateData(0, mesh->vertex.size() * sizeof(float), (void *)&mesh->vertex[0]);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer((GLuint)0, 3, GL_FLOAT, true, 0, 0);
+
+	if (mesh->uv.size() > 0)
+	{
+		render->vao.UpdateData(1, mesh->uv.size() * sizeof(float), (void *)&mesh->uv[0]);
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+	}
+
+
+	render->vao.UpdateData(2, mesh->normal.size() * sizeof(float), (void *)&mesh->normal[0]);
+	glEnableVertexAttribArray(2);
+	glVertexAttribPointer(2, 3, GL_FLOAT, GL_TRUE, 0, 0);
+
+	render->vao.UpdateData(3, mesh->index.size() * sizeof(int), (void *)&mesh->index[0]);
+
+	glDrawElements(GL_TRIANGLES, mesh->index.size(), GL_UNSIGNED_INT, 0);
+	glPopMatrix();//»Ö¸´ÉãÏñ»ú¾ØÕó
+	render->CatchError();
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+void RcmdMaterial::Init(MaterialPtr material)
+{
+	this->material = material;
+}
+
+void RcmdMaterial::Deal(RenderEngine * render)
+{
+	render->pipeline_status.material = material;
+	material->Bind();
+}
+/////////////////////////////////////////////////////////////
+void RcmdLight::Init(Light * light)
+{
+	this->light = light;
+
+}
+
+void RcmdLight::Deal(RenderEngine * render)
+{
+	LightInfo info(light);
+	render->pipeline_status.lights.push_back(info);
+}
+/////////////////////////////////////////////////////////////////
+void RcmdCamera::Init(Camera * camera)
+{
+	this->camera = camera; 
+}
+
+void RcmdCamera::Deal(RenderEngine * render)
+{
+	render->pipeline_status.camera = camera; 
+}

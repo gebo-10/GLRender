@@ -1,5 +1,5 @@
-#ifndef _LUAENGINE_HPP
-#define _LUAENGINE_HPP
+#ifndef _LUAENGINE_H
+#define _LUAENGINE_H
 #pragma once
 #include<Base.hpp>
 extern "C"

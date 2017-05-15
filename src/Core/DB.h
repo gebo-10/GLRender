@@ -1,5 +1,5 @@
-#ifndef _DB_HPP
-#define _DB_HPP
+#ifndef _DB_H
+#define _DB_H
 #pragma once
 #include<Base.hpp>
 #include <sqlite3.h>

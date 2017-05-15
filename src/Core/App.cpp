@@ -34,10 +34,14 @@ bool App::Init(char * name, int width, int height)
 		cout.write((char *)res->buff, res->size);
 	});
 
-	
+
 	scene.Init();
 
+	render.InitSecond();
+
 	logic.Init();
+
+	
 	return true;
 }
 

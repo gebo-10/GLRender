@@ -1,5 +1,5 @@
-#ifndef _APP_HPP
-#define _APP_HPP
+#ifndef _APP_H
+#define _APP_H
 #pragma once
 #include<Base.hpp>
 #include <SceneManager.h>

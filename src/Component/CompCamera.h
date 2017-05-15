@@ -11,6 +11,7 @@ public:
 	int win_height;
 
 	RcmdLine cmd_line;
+	RcmdCamera cmd_camera;
 
 	Camera camera;
 	CompCamera();

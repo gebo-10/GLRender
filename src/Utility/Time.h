@@ -1,5 +1,5 @@
-#ifndef _TIMER_HPP
-#define _TIMER_HPP
+#ifndef _TIMER_H
+#define _TIMER_H
 #pragma once
 #include <Base.hpp>
 #include <SDL/SDL.h>

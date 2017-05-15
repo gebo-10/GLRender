@@ -57,6 +57,16 @@ public:
 
 	};
 
+	FileWork * OpenFileSync(string filename)
+	{
+		FileWork *work = new FileWork;
+		work->filename = filename;
+
+		OpenFileReal(work);
+		return work;
+	};
+
+
 	void OpenFileReal(Work * work)
 	{
 		FileWork * file_work = (FileWork *)work;

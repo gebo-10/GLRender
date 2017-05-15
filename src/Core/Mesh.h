@@ -6,9 +6,10 @@
 class Mesh{
 public:
 	vector<float> vertex;
-	vector<int> index;
 	vector<float> uv;
 	vector<float> normal;
+
+	vector<int> index;
 	
 	Mesh();
 	Mesh(aiMesh* paiMesh);
@@ -16,5 +17,6 @@ public:
 	void Init(aiMesh* paiMesh);
 };
 
+typedef std::shared_ptr<Mesh> MeshPtr;
 
 #endif

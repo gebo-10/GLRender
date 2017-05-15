@@ -20,7 +20,7 @@ public:
 	int    i;
 	float  f;
 	Color color;
-	OBJPtr ptr; //话说 这样 能释放资源吗 ? ?
+	OBJPtr ptr; //话说 用 union 能释放资源吗 ? ?
 };
 class ShaderParam
 {
@@ -46,7 +46,7 @@ public:
 	Shader();
 	~Shader();
 	
-	bool Init();
+	bool LoadCallback();
 	bool ParseParam(char * jsonstr);
 	void BuildShader(GLchar * vertex_file, GLchar * frag_file);
 	bool BuildVertexShader(char * source);
