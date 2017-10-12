@@ -59,6 +59,12 @@ bool RenderEngine::Init(char * name,int width,int height)
 	vao.NewVBO(sizeof(memery), (void *)&memery, GL_ELEMENT_ARRAY_BUFFER);
 
 	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);//设置融合方式
+
+	glClear(GL_DEPTH_BUFFER_BIT);
+	glDepthMask(GL_FALSE);
+
+	glEnable(GL_POINT_SMOOTH);
 	glHint(GL_LINE_SMOOTH, GL_NICEST);
 
 	CatchError();
