@@ -1,9 +1,73 @@
-set_property(GLOBAL PROPERTY USE_FOLDERS On)
-cmake_minimum_required(VERSION 3.7)
-PROJECT (GLRender)
-add_subdirectory(core)
-add_subdirectory(component)
-SET(SRC_LIST main.cpp)
+#指定cmake版本 
+cmake_minimum_required(VERSION 3.9)
 
-ADD_EXECUTABLE(main ${SRC_LIST} ${CORE_SRC})
-target_link_libraries(main core)
+#指定项目的名称，一般和项目的文件夹名称对应
+PROJECT(GLRender)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/SDL/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/SDL/lib)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/Assimp/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/Assimp/lib)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/Eigen)
+
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/freetype/include/freetype2)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/freetype/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/freetype/lib)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/glew/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/glew/lib)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/glog/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/glog/lib)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/kazmath/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/kazmath/lib)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/lua/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/lua/lib)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/pthread/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/pthread/lib)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/rapidjson)
+
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/Sqlite3/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/Sqlite3/lib)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/TcMalloc/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/TcMalloc/lib)
+
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/3rd/tolua/include)
+LINK_DIRECTORIES(   ${CMAKE_SOURCE_DIR}/3rd/tolua/lib)
+
+INCLUDE_DIRECTORIES(src/Core)
+INCLUDE_DIRECTORIES(src/Component)
+INCLUDE_DIRECTORIES(src/LuaPort)
+INCLUDE_DIRECTORIES(src/ResourceSystem)
+INCLUDE_DIRECTORIES(src/Utility)
+
+#file(GLOB CURRENT_HEADERS "src/export/*.h") 
+#source_group("Export" FILES ${CURRENT_HEADERS}) 
+
+#AUX_SOURCE_DIRECTORY(src DIR_SRCS)
+#SET(SRC ${DIR_SRCS})
+
+SET(MAIN main.cpp)
+
+AUX_SOURCE_DIRECTORY(src/Core CORE)
+AUX_SOURCE_DIRECTORY(src/Component COMP)
+AUX_SOURCE_DIRECTORY(src/LuaPort LUAPORT)
+AUX_SOURCE_DIRECTORY(src/ResourceSystem RES_SYS)
+AUX_SOURCE_DIRECTORY(src/Utility UTIL)
+
+
+ADD_EXECUTABLE(${PROJECT_NAME} ${MAIN} ${CORE} ${COMP} ${LUAPORT} ${RES_SYS} ${UTIL} )
+
+set_target_properties(${PROJECT_NAME}
+     PROPERTIES
+     LINK_FLAGS /SUBSYSTEM:WINDOWS
+     )
