@@ -1,0 +1,10 @@
+{
+	"shader":"normal.shader",
+
+	"param":[
+		["testint","show in editor","int",1],
+		["testfloat","show in editor","float",2.0],
+		["testcolor","show in editor","color",[0.1,0.5,1,1]],
+		["tex1","show in editor","texture","Texure/laopo.jpg"]
+	]
+}

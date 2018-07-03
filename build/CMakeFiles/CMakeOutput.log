@@ -1,0 +1,344 @@
+The system is: Windows - 10.0.16299 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) ��������汾 14.0.25420.1
+��Ȩ����(C) Microsoft Corporation����������Ȩ����
+
+��������ʱ��Ϊ 2018/4/18 18:48:23��
+�ڵ� 1 �ϵ���Ŀ��C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\3.11.1\CompilerIdC\CompilerIdC.vcxproj��(Ĭ��Ŀ��)��
+PrepareForBuild:
+  ���ڴ���Ŀ¼��Debug\����
+  ���ڴ���Ŀ¼��Debug\CompilerIdC.tlog\����
+InitializeBuildStatus:
+  ���ڴ�����Debug\CompilerIdC.tlog\unsuccessfulbuild������Ϊ��ָ����AlwaysCreate����
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue CMakeCCompilerId.c
+  CMakeCCompilerId.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCCompilerId.obj
+  CompilerIdC.vcxproj -> C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\3.11.1\CompilerIdC\.\CompilerIdC.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_C_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
+FinalizeBuildStatus:
+  ����ɾ���ļ���Debug\CompilerIdC.tlog\unsuccessfulbuild����
+  ���ڶԡ�Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate��ִ�� Touch ����
+�����������Ŀ��C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\3.11.1\CompilerIdC\CompilerIdC.vcxproj��(Ĭ��Ŀ��)�Ĳ�����
+
+�ѳɹ����ɡ�
+    0 ������
+    0 ������
+
+����ʱ�� 00:00:02.53
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+The C compiler identification is MSVC, found in "C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/3.11.1/CompilerIdC/CompilerIdC.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) ��������汾 14.0.25420.1
+��Ȩ����(C) Microsoft Corporation����������Ȩ����
+
+��������ʱ��Ϊ 2018/4/18 18:48:26��
+�ڵ� 1 �ϵ���Ŀ��C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\3.11.1\CompilerIdCXX\CompilerIdCXX.vcxproj��(Ĭ��Ŀ��)��
+PrepareForBuild:
+  ���ڴ���Ŀ¼��Debug\����
+  ���ڴ���Ŀ¼��Debug\CompilerIdCXX.tlog\����
+InitializeBuildStatus:
+  ���ڴ�����Debug\CompilerIdCXX.tlog\unsuccessfulbuild������Ϊ��ָ����AlwaysCreate����
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue CMakeCXXCompilerId.cpp
+  CMakeCXXCompilerId.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCXXCompilerId.obj
+  CompilerIdCXX.vcxproj -> C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\3.11.1\CompilerIdCXX\.\CompilerIdCXX.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_CXX_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe
+FinalizeBuildStatus:
+  ����ɾ���ļ���Debug\CompilerIdCXX.tlog\unsuccessfulbuild����
+  ���ڶԡ�Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate��ִ�� Touch ����
+�����������Ŀ��C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\3.11.1\CompilerIdCXX\CompilerIdCXX.vcxproj��(Ĭ��Ŀ��)�Ĳ�����
+
+�ѳɹ����ɡ�
+    0 ������
+    0 ������
+
+����ʱ�� 00:00:01.00
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+
+The CXX compiler identification is MSVC, found in "C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/3.11.1/CompilerIdCXX/CompilerIdCXX.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_caae7.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018/4/18 18:48:27。
+节点 1 上的项目“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\cmTC_caae7.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_caae7.dir\Debug\”。
+  正在创建目录“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_caae7.dir\Debug\cmTC_caae7.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_caae7.dir\Debug\cmTC_caae7.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_caae7.dir\Debug\\" /Fd"cmTC_caae7.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\testCCompiler.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  testCCompiler.c
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_caae7.dir\Debug\\" /Fd"cmTC_caae7.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\testCCompiler.c
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\cmTC_caae7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_caae7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_caae7.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_caae7.dir\Debug\testCCompiler.obj
+  cmTC_caae7.vcxproj -> C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\cmTC_caae7.exe
+  cmTC_caae7.vcxproj -> C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_caae7.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_caae7.dir\Debug\cmTC_caae7.tlog\unsuccessfulbuild”。
+  正在对“cmTC_caae7.dir\Debug\cmTC_caae7.tlog\cmTC_caae7.lastbuildstate”执行 Touch 任务。
+已完成生成项目“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\cmTC_caae7.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:01.45
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_b4bc5.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018/4/18 18:48:29。
+节点 1 上的项目“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\cmTC_b4bc5.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_b4bc5.dir\Debug\”。
+  正在创建目录“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_b4bc5.dir\Debug\cmTC_b4bc5.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_b4bc5.dir\Debug\cmTC_b4bc5.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b4bc5.dir\Debug\\" /Fd"cmTC_b4bc5.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.11\Modules\CMakeCCompilerABI.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b4bc5.dir\Debug\\" /Fd"cmTC_b4bc5.dir\Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.11\Modules\CMakeCCompilerABI.c"
+  
+  CMakeCCompilerABI.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\cmTC_b4bc5.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_b4bc5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_b4bc5.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_b4bc5.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_b4bc5.vcxproj -> C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\cmTC_b4bc5.exe
+  cmTC_b4bc5.vcxproj -> C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_b4bc5.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_b4bc5.dir\Debug\cmTC_b4bc5.tlog\unsuccessfulbuild”。
+  正在对“cmTC_b4bc5.dir\Debug\cmTC_b4bc5.tlog\cmTC_b4bc5.lastbuildstate”执行 Touch 任务。
+已完成生成项目“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\cmTC_b4bc5.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.88
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_9bc59.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018/4/18 18:48:30。
+节点 1 上的项目“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\cmTC_9bc59.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_9bc59.dir\Debug\”。
+  正在创建目录“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_9bc59.dir\Debug\cmTC_9bc59.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_9bc59.dir\Debug\cmTC_9bc59.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9bc59.dir\Debug\\" /Fd"cmTC_9bc59.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9bc59.dir\Debug\\" /Fd"cmTC_9bc59.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+  
+  testCXXCompiler.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\cmTC_9bc59.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_9bc59.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_9bc59.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_9bc59.dir\Debug\testCXXCompiler.obj
+  cmTC_9bc59.vcxproj -> C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\cmTC_9bc59.exe
+  cmTC_9bc59.vcxproj -> C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_9bc59.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_9bc59.dir\Debug\cmTC_9bc59.tlog\unsuccessfulbuild”。
+  正在对“cmTC_9bc59.dir\Debug\cmTC_9bc59.tlog\cmTC_9bc59.lastbuildstate”执行 Touch 任务。
+已完成生成项目“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\cmTC_9bc59.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.96
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_ab8bd.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018/4/18 18:48:31。
+节点 1 上的项目“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\cmTC_ab8bd.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_ab8bd.dir\Debug\”。
+  正在创建目录“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_ab8bd.dir\Debug\cmTC_ab8bd.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_ab8bd.dir\Debug\cmTC_ab8bd.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_ab8bd.dir\Debug\\" /Fd"cmTC_ab8bd.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.11\Modules\CMakeCXXCompilerABI.cpp"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_ab8bd.dir\Debug\\" /Fd"cmTC_ab8bd.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.11\Modules\CMakeCXXCompilerABI.cpp"
+  
+  CMakeCXXCompilerABI.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\cmTC_ab8bd.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_ab8bd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_ab8bd.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_ab8bd.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTC_ab8bd.vcxproj -> C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\cmTC_ab8bd.exe
+  cmTC_ab8bd.vcxproj -> C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_ab8bd.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_ab8bd.dir\Debug\cmTC_ab8bd.tlog\unsuccessfulbuild”。
+  正在对“cmTC_ab8bd.dir\Debug\cmTC_ab8bd.tlog\cmTC_ab8bd.lastbuildstate”执行 Touch 任务。
+已完成生成项目“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\cmTC_ab8bd.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.93
+
+
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/14.0/bin/MSBuild.exe" "cmTC_40ae1.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=14.0"
+Microsoft (R) 生成引擎版本 14.0.25420.1
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2018/4/18 18:48:33。
+节点 1 上的项目“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\cmTC_40ae1.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_40ae1.dir\Debug\”。
+  正在创建目录“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_40ae1.dir\Debug\cmTC_40ae1.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_40ae1.dir\Debug\cmTC_40ae1.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_40ae1.dir\Debug\\" /Fd"cmTC_40ae1.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\feature_tests.cxx
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.00.24215.1 版
+  版权所有(C) Microsoft Corporation。保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_40ae1.dir\Debug\\" /Fd"cmTC_40ae1.dir\Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:queue C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\feature_tests.cxx
+  
+  feature_tests.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\cmTC_40ae1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_40ae1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_40ae1.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_40ae1.dir\Debug\feature_tests.obj
+  cmTC_40ae1.vcxproj -> C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\Debug\cmTC_40ae1.exe
+  cmTC_40ae1.vcxproj -> C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/CMakeTmp/Debug/cmTC_40ae1.pdb (Full PDB)
+FinalizeBuildStatus:
+  正在删除文件“cmTC_40ae1.dir\Debug\cmTC_40ae1.tlog\unsuccessfulbuild”。
+  正在对“cmTC_40ae1.dir\Debug\cmTC_40ae1.tlog\cmTC_40ae1.lastbuildstate”执行 Touch 任务。
+已完成生成项目“C:\Users\gebo_\Documents\GitHub\GLRender\build\CMakeFiles\CMakeTmp\cmTC_40ae1.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.91
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates

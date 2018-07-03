@@ -1,4 +1,4 @@
-#指定cmake版本 
+﻿#指定cmake版本 
 cmake_minimum_required(VERSION 3.9)
 
 #指定项目的名称，一般和项目的文件夹名称对应
@@ -64,6 +64,7 @@ AUX_SOURCE_DIRECTORY(src/LuaPort LUAPORT)
 AUX_SOURCE_DIRECTORY(src/ResourceSystem RES_SYS)
 AUX_SOURCE_DIRECTORY(src/Utility UTIL)
 
+AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/3rd/tolua/src UTIL)
 
 ADD_EXECUTABLE(${PROJECT_NAME} ${MAIN} ${CORE} ${COMP} ${LUAPORT} ${RES_SYS} ${UTIL} )
 

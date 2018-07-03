@@ -1,5 +1,7 @@
-#version 330 
+#version 440 core
 uniform float a; 
+uniform mat4 MV;
+uniform mat4 P;
 layout(location = 0) in vec3 VertexPosition;
 
 layout(location = 1) in vec2 vertTexCoord;
@@ -12,6 +14,8 @@ void main(){
 	b=a;
 	fragTexCoord=vertTexCoord;
 	p2 = vec4(VertexPosition,1.0);
-	gl_Position =gl_ModelViewProjectionMatrix * p2;
+	gl_Position =P  *MV * p2;
+	//gl_Position ==l_ModelViewProjectionMatrix * p2;
+	
 	
 }

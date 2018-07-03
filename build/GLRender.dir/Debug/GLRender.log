@@ -1,0 +1,250 @@
+﻿  Building Custom Rule C:/Users/gebo_/Documents/GitHub/GLRender/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/generate.stamp is up-to-date.
+  main.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+  App.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\App.cpp(22): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: 参见“strcpy”的声明
+  Camera.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Camera.cpp(82): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Camera.cpp(83): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Camera.cpp(99): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Camera.cpp(100): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Camera.cpp(118): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Camera.cpp(119): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Camera.cpp(136): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Camera.cpp(137): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+  Component.cpp
+  DB.cpp
+  Font.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Font.cpp(72): warning C4309: “=”: 截断常量值
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Font.cpp(73): warning C4309: “=”: 截断常量值
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Font.cpp(74): warning C4309: “=”: 截断常量值
+  Light.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Light.cpp(85): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Light.cpp(86): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Light.cpp(87): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Light.cpp(88): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  Log.cpp
+  Logic.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompMeshRender.hpp(48): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompMeshRender.hpp(82): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(38): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(39): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(40): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(111): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(112): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(113): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(114): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(116): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(117): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(118): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(237): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(238): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(241): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(244): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp(252): warning C4244: “参数”: 从“Sint32”转换到“float”，可能丢失数据
+  Mesh.cpp
+  RenderCommand.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderCommand.cpp(68): warning C4305: “参数”: 从“double”到“GLfloat”截断
+  RenderEngine.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.cpp(109): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.cpp(151): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.cpp(137): warning C4101: “err”: 未引用的局部变量
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.cpp(171): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.cpp(354): warning C4018: “<”: 有符号/无符号不匹配
+  SceneManager.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.cpp(35): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.cpp(48): warning C4018: “<”: 有符号/无符号不匹配
+  SceneObject.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+  ScriptEngine.cpp
+  VAO.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+  VBO.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+  CompCamera.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp(28): warning C4838: 从“int”转换到“float”需要收缩转换
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp(28): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp(29): warning C4838: 从“int”转换到“float”需要收缩转换
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp(29): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp(36): warning C4838: 从“int”转换到“float”需要收缩转换
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp(36): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp(37): warning C4838: 从“int”转换到“float”需要收缩转换
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp(37): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp(75): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp(90): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  CompLight.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+  Student.cpp
+  正在生成代码...
+  正在编译...
+  lua_Student.cpp
+  Material.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Material.cpp(33): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Material.cpp(72): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Material.cpp(112): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Material.cpp(113): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Material.cpp(114): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Material.cpp(115): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+  Model.cpp
+  ResourceManager.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+  Script.cpp
+  Shader.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(30): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.h(32): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(72): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.h(88): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Shader.cpp(21): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Shader.cpp(24): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Shader.cpp(27): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Shader.cpp(45): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Shader.cpp(85): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Shader.cpp(86): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Shader.cpp(87): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Shader.cpp(88): warning C4244: “=”: 从“float”转换到“unsigned char”，可能丢失数据
+  Texture.cpp
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(83): warning C4244: “=”: 从“std::streamoff”转换到“long”，可能丢失数据
+C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\FileSystem.h(109): warning C4244: “=”: 从“std::streamoff”转换到“int”，可能丢失数据
+  Time.cpp
+  正在生成代码...
+c:\users\gebo_\documents\github\glrender\src\resourcesystem\resourcemanager.cpp(116): warning C4715: “<lambda_c713a8001bbc5a53de217583761c7909>::operator()”: 不是所有的控件路径都返回值
+  tolua_event.c
+  tolua_is.c
+C:\Users\gebo_\Documents\GitHub\GLRender\3rd\tolua\src\tolua_is.c(119): warning C4114: 多次使用同一类型限定符
+  tolua_map.c
+C:\Users\gebo_\Documents\GitHub\GLRender\3rd\tolua\src\tolua_map.c(395): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(255): note: 参见“strncat”的声明
+C:\Users\gebo_\Documents\GitHub\GLRender\3rd\tolua\src\tolua_map.c(525): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(255): note: 参见“strncat”的声明
+C:\Users\gebo_\Documents\GitHub\GLRender\3rd\tolua\src\tolua_map.c(526): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(255): note: 参见“strncat”的声明
+  tolua_push.c
+  tolua_to.c
+  正在生成代码...
+lua5.1.lib(lstate.obj) : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+MSVCRTD.lib(initializers.obj) : warning LNK4098: 默认库“msvcrt.lib”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+SDL2main.lib(SDL_windows_main.obj) : warning LNK4217: 本地定义的符号 ___iob_func 在函数 _ShowError 中导入
+lua5.1.lib(lapi.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lapi.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lauxlib.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lauxlib.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lbaselib.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lbaselib.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lcode.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lcode.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(ldblib.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(ldblib.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(ldebug.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(ldebug.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(ldo.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(ldo.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(ldump.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(ldump.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lfunc.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lfunc.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lgc.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lgc.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(linit.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(linit.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(liolib.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(liolib.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(llex.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(llex.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lmathlib.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lmathlib.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lmem.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lmem.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(loadlib.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(loadlib.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lobject.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lobject.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lopcodes.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lopcodes.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(loslib.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(loslib.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lparser.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lparser.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lstate.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lstate.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lstring.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lstring.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lstrlib.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lstrlib.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(ltable.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(ltable.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(ltablib.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(ltablib.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(ltm.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(ltm.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lundump.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lundump.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lvm.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lvm.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+lua5.1.lib(lzio.obj) : warning LNK4099: 未找到 PDB“lua.pdb”(使用“lua5.1.lib(lzio.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\lua.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+kazmath.lib(mat4.obj) : warning LNK4099: 未找到 PDB“kazmath.pdb”(使用“kazmath.lib(mat4.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\kazmath.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+kazmath.lib(quaternion.obj) : warning LNK4099: 未找到 PDB“kazmath.pdb”(使用“kazmath.lib(quaternion.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\kazmath.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+kazmath.lib(utility.obj) : warning LNK4099: 未找到 PDB“kazmath.pdb”(使用“kazmath.lib(utility.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\kazmath.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+kazmath.lib(vec3.obj) : warning LNK4099: 未找到 PDB“kazmath.pdb”(使用“kazmath.lib(vec3.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\kazmath.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+kazmath.lib(vec4.obj) : warning LNK4099: 未找到 PDB“kazmath.pdb”(使用“kazmath.lib(vec4.obj)”或在“C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\kazmath.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  GLRender.vcxproj -> C:\Users\gebo_\Documents\GitHub\GLRender\build\Debug\GLRender.exe
+  GLRender.vcxproj -> C:/Users/gebo_/Documents/GitHub/GLRender/build/Debug/GLRender.pdb (Full PDB)

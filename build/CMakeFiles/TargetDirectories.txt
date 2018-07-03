@@ -1,0 +1,3 @@
+C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/GLRender.dir
+C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/gebo_/Documents/GitHub/GLRender/build/CMakeFiles/ZERO_CHECK.dir

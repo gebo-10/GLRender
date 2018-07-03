@@ -1,0 +1,7 @@
+{
+	"shader":"normal.shader",
+
+	"param":[
+		["font_texture","ShowInEditor","texture","Texure/f.png"]
+	]
+}

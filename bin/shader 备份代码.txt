@@ -1,0 +1,45 @@
+struct AmbientLightStruct{
+	vec4 color;
+};
+
+struct DirectionLightStruct{
+	bool is_shadow;
+	int  shadow_map_index;
+	mat4 VP;
+
+	vec4 color;
+	vec4 dir;
+};
+
+struct PointLightStruct{
+	bool is_shadow;
+	int  shadow_map_index;
+	mat4 VP;
+
+	vec4 color;
+	vec4 pos;
+};
+
+struct SpotLightStruct{
+	bool is_shadow;
+	int  shadow_map_index;
+	mat4 VP;
+
+	vec4 color;
+	vec4 dir;
+	vec4 pos;
+};
+
+
+uniform Light{
+	AmbientLightStruct ambient_Light;
+
+	int direction_light_num;
+	DirectionLightStruct direction_light[5];
+
+	int point_light_num;
+	DirectionLightStruct point_light[5];
+
+	int spot_light_num;
+	DirectionLightStruct spot_light[5];
+}L;

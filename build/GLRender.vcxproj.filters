@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\DB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Logic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\RenderEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\SceneObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\ScriptEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\VAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Core\VBO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Component\CompLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\LuaPort\Student.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\LuaPort\lua_Student.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\ResourceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Script.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\ResourceSystem\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\src\Utility\Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\3rd\tolua\src\tolua_event.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\3rd\tolua\src\tolua_is.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\3rd\tolua\src\tolua_map.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\3rd\tolua\src\tolua_push.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\gebo_\Documents\GitHub\GLRender\3rd\tolua\src\tolua_to.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\gebo_\Documents\GitHub\GLRender\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{384F6235-461F-3AEE-AD16-E0EE394B1713}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
